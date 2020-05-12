@@ -3,9 +3,13 @@ import React, { Component } from 'react';
 class Nav extends Component {
     render() {
         return(
-            <div>
-                Nav placeholder.
-            </div>
+            <nav>
+                Nav placeholder [Pomodoro Timer]
+                <button>link placeholder</button>
+                <button>link placeholder</button>
+                <button>link placeholder</button>
+                <button>link placeholder</button>
+            </nav>
         );
     }
 }

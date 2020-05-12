@@ -1,0 +1,9 @@
+header {
+    font-size: 40px;
+    min-height: 100px;
+    padding-top: 20px;
+}
+
+#timer-component {
+    font-size: 100px;
+}

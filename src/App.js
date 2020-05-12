@@ -7,6 +7,7 @@ import Notes from './Components/Notes.js';
 import Sessions from './Components/Sessions.js';
 import TimerComponent from './Components/TimerComponent.js';
 import PomodoroContext from './PomodoroContext';
+import './App.css'
 
 class App extends Component {
   state = {
