@@ -5,7 +5,7 @@ import Login from './Components/Login.js';
 import Main from './Components/Main.js';
 import Notes from './Components/Notes.js';
 import Sessions from './Components/Sessions.js';
-import Timer from './Components/Timer.js';
+import TimerComponent from './Components/TimerComponent.js';
 import PomodoroContext from './PomodoroContext';
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
             <Route component={Nav} />
             <main className="app-content">
               <Route exact path="/" component={Main} />
-              <Route path="/timer" component={Timer}/>
+              <Route path="/timer" component={TimerComponent}/>
               <Route path="/login" component={Login}/>
               <Route path="/sessions" component={Sessions}/>
               <Route path="/notes" component={Notes}/>
