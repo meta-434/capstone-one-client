@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Nav from './Components/Nav.js';
 import Login from './Components/Login.js';
+import Signup from './Components/Signup.js';
 import Main from './Components/Main.js';
 import Notes from './Components/Notes.js';
 import Sessions from './Components/Sessions.js';
@@ -32,14 +33,14 @@ class App extends Component {
               <Route exact path="/" component={Main} />
               <Route path="/timer" component={TimerComponent}/>
               <Route path="/login" component={Login}/>
-              <Route path="/sessions" component={Sessions}/>
-              <Route path="/notes" component={Notes}/>
+              <Route path="/signup" component={Signup} />
+              <Route path="/sessions/:sessionId" component={Sessions}/>
+              <Route path="/notes/:noteId" component={Notes}/>
             </main>
           </div>
         </PomodoroContext.Provider>
     );
   }
-
 }
 
 export default App;

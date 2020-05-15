@@ -1,9 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e1940b3b-497d-49fe-b057-f712bf2c26a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Signup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/capstone-one-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/capstone-one-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Notes.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Notes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Notes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Notes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Sessions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sessions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sessions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bu43TAneJzNaFG40vAZsmsPDYg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../noteful-client" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="/usr/local/Cellar/yarn/1.19.2/libexec" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1940b3b-497d-49fe-b057-f712bf2c26a3" name="Default Changelist" comment="" />
+      <created>1589468445016</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589468445016</updated>
+      <workItem from="1589468446204" duration="3655000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1443" y="-801" key="FileChooserDialogImpl" timestamp="1589469193362">
+      <screen x="703" y="-1080" width="1920" height="1050" />
+    </state>
+    <state x="1443" y="-801" key="FileChooserDialogImpl/0.0.3440.1410/703.-1080.1920.1050@703.-1080.1920.1050" timestamp="1589469193362" />
+    <state width="2256" height="400" key="GridCell.Tab.0.bottom" timestamp="1589468505672">
+      <screen x="0" y="0" width="3440" height="1410" />
+    </state>
+    <state width="2256" height="400" key="GridCell.Tab.0.bottom/0.0.3440.1410/703.-1080.1920.1050@0.0.3440.1410" timestamp="1589468505672" />
+    <state width="2256" height="400" key="GridCell.Tab.0.center" timestamp="1589468505672">
+      <screen x="0" y="0" width="3440" height="1410" />
+    </state>
+    <state width="2256" height="400" key="GridCell.Tab.0.center/0.0.3440.1410/703.-1080.1920.1050@0.0.3440.1410" timestamp="1589468505672" />
+    <state width="2256" height="400" key="GridCell.Tab.0.left" timestamp="1589468505672">
+      <screen x="0" y="0" width="3440" height="1410" />
+    </state>
+    <state width="2256" height="400" key="GridCell.Tab.0.left/0.0.3440.1410/703.-1080.1920.1050@0.0.3440.1410" timestamp="1589468505672" />
+    <state width="2256" height="400" key="GridCell.Tab.0.right" timestamp="1589468505672">
+      <screen x="0" y="0" width="3440" height="1410" />
+    </state>
+    <state width="2256" height="400" key="GridCell.Tab.0.right/0.0.3440.1410/703.-1080.1920.1050@0.0.3440.1410" timestamp="1589468505672" />
   </component>
 </project>

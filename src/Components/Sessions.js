@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 class Sessions extends Component {
     render() {
         return(
-            <div>
+            <header>
                 Sessions placeholder.
-            </div>
+                <br />
+
+                test
+            </header>
         );
     }
 }
