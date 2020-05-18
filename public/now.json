@@ -1,6 +1,5 @@
 {
   "version": 1,
-  "alias": "capstone-one-client",
   "name": "pomodoro-client",
   "routes": [
     {
