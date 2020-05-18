@@ -15,14 +15,16 @@ class Nav extends Component {
         return(
         <nav>
             <h1 className="nav-h1"><Link to='/'>Pomodoro Timer</Link></h1>
-            <button><Link to='/timer'>Timer</Link></button>
             {(!!this.context.authToken || sessionStorage[`access-token`])
                 ? <>
+                    <p>Logged In {sessionStorage[`username`] || this.context.username}</p>
+                    <button><Link to='/timer'>Timer</Link></button>
                     <button><Link to='/sessions/'>Sessions</Link></button>
                     <button><Link to='/notes/'>Notes</Link></button>
                     <button onClick={this.logOut}>Log Out</button>
                 </>
                 : <>
+                    <button><Link to='/timer'>Timer</Link></button>
                     <button><Link to='/login'>Log In</Link></button>
                     <button><Link to='/signup'>Sign Up</Link></button>
                 </>

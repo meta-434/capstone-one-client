@@ -57,9 +57,9 @@ class TimerComponent extends Component {
                     <button onClick={start5}>Start5</button>
                     <button onClick={reset}>Reset</button>
                 </section>
-                {(!!this.context.authToken)
-                    ? <><p>logged in</p></>
-                    : <><p>not logged in</p></>
+                {(!!this.context.authToken || sessionStorage[`access-token`])
+                    ? ''
+                    : <><p>You are not logged in</p></>
                 }
             </>
         );

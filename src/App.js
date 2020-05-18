@@ -17,10 +17,6 @@ class App extends Component {
     authToken: undefined,
   }
 
-  componentDidMount() {
-
-  }
-
   logOut = () => {
     this.setState({authToken: undefined});
     console.log('sessionStorage', sessionStorage);
@@ -41,28 +37,67 @@ class App extends Component {
         .then(result =>  result.json())
         .then(resJson => {
           if (!!resJson.token) {
-            this.setState({ authToken: resJson.token })
+            this.setState({ authToken: resJson.token, username })
+            sessionStorage.setItem('access-token', this.state.authToken);
+            sessionStorage.setItem('username', username);
           }
           else {
            throw new Error(' error in authenticating. check username and password. ');
           }
         })
-        .then(() => {
-          sessionStorage.setItem('access-token', this.state.authToken);
-        })
         .catch(error => console.error(error));
   };
 
-  handlePostSession = ({}) => {
-
+  handlePostSession = ({session_name, session_description, ownerId}) => {
+    fetch(process.env.REACT_APP_SERVER_URL + `/api/sessions`, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
+      },
+      body: JSON.stringify({
+        session_name,
+        session_description,
+        session_owner: ownerId
+      })
+    })
+        .then(res => this.handleGetSessions())
+        .catch(error => console.error(error));
   }
 
-  handleGetSessions = ({}) => {
-
+  handleGetSessions = () => {
+    fetch(process.env.REACT_APP_SERVER_URL+ `/api/sessions`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
+      }
+    })
+        .then(response => response.json())
+        .then(responseJson => {
+              console.log('responseJson', responseJson);
+              if (responseJson.success && responseJson.success === false) {
+                throw new Error('error in getting sessions')
+              } else {
+                this.setState({
+                  sessions: responseJson
+                })
+              }
+            }
+        )
+        .catch(error => console.error(error));
   }
 
-  handleDeleteSession = () => {
-
+  handleDeleteSession = (id) => {
+    fetch(process.env.REACT_APP_SERVER_URL + `/api/sessions/${id}`, {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json',
+        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
+      }
+    })
+        .then(res => this.handleGetSessions())
+        .catch(error => console.error(error));
   }
 
   handlePostNote = ({note_name, note_content, ownerId}) => {
@@ -118,16 +153,20 @@ class App extends Component {
   }
 
   render () {
-    const { sessions, notes, authToken } = this.state;
+    const { sessions, notes, authToken, username } = this.state;
     const context = {
       sessions,
       notes,
+      username,
       authToken,
       handlePostAuthenticate: this.handlePostAuthenticate,
       logOut: this.logOut,
       handleGetNotes: this.handleGetNotes,
       handlePostNote: this.handlePostNote,
       handleDeleteNote: this.handleDeleteNote,
+      handleGetSessions: this.handleGetSessions,
+      handleDeleteSession: this.handleDeleteSession,
+      handlePostSession: this.handlePostSession,
     }
     return (
         <PomodoroContext.Provider value={(context)}>
