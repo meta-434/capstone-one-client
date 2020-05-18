@@ -13,42 +13,108 @@ import './App.css'
 class App extends Component {
   state = {
     sessions: [],
-    notes: []
+    notes: [],
+    authToken: undefined,
   }
 
-  //include all your CRUD here and include in context
+  logOut = () => {
+    this.setState({authToken: undefined});
+  }
+
   handlePostAuthenticate = ({ username, password }) => {
     fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
-      method: 'POST',
+      method: 'post',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        username: username,
-        password: password,
+        'username': username,
+        'password': password,
       })
     })
+        .then(result =>  result.json())
+        .then(resJson => {
+          if (!!resJson.token) {
+            this.setState({ authToken: resJson.token })
+          }
+          else {
+           throw new Error(' error in authenticating. check username and password. ');
+          }
+        })
         .catch(error => console.error(error));
   };
 
+  handlePostSession = ({}) => {
+
+  }
+
+  handleGetSessions = ({}) => {
+
+  }
+
+  handleDeleteSession = () => {
+
+  }
+
+  handlePostNote = ({note_name, note_content, ownerId}) => {
+    fetch(process.env.REACT_APP_SERVER_URL + `/notes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'access-token': `${this.state.authToken}`
+      },
+      body: JSON.stringify({
+        note_name,
+        note_content,
+        note_owner: ownerId
+      })
+    })
+        .catch(error => console.error(error));
+  }
+
+  handleGetNotes = () => {
+    fetch(process.env.REACT_APP_SERVER_URL+ `/api/notes`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'access-token': `${this.state.authToken}`
+      }
+    })
+        .then(response => response.json())
+        .then(responseJson =>
+            this.setState({
+              notes: responseJson
+            })
+        )
+        .catch(error => console.error(error));
+  }
+
+  handleDeleteNotes = () => {
+
+  }
+
   render () {
-    const { sessions, notes } = this.state;
+    const { sessions, notes, authToken } = this.state;
     const context = {
       sessions,
       notes,
+      authToken,
       handlePostAuthenticate: this.handlePostAuthenticate,
+      logOut: this.logOut,
+      handleGetNotes: this.handleGetNotes,
     }
     return (
         <PomodoroContext.Provider value={(context)}>
           <div className="app">
-            <Route component={Nav} />
+            <Route path="/" render={routeProps => <Nav {...routeProps}/>}/>
             <main className="app-content">
               <Route exact path="/" component={Main} />
-              <Route path="/timer" component={TimerComponent}/>
               <Route path="/login" component={Login}/>
               <Route path="/signup" component={Signup} />
-              <Route path="/sessions/:sessionId" component={Sessions}/>
-              <Route path="/notes/:noteId" component={Notes}/>
+              <Route path="/timer" component={TimerComponent}/>
+              <Route path="/sessions/:sessionId?" component={Sessions}/>
+              <Route path="/notes/:noteId?" component={Notes}/>
+
             </main>
           </div>
         </PomodoroContext.Provider>

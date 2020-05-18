@@ -22,7 +22,8 @@ class Login extends Component {
         this.validatePassword(this.state.password);
     }
 
-    handlePostSubmit = () => {
+    handlePostSubmit = (e) => {
+        e.preventDefault();
         this.context.handlePostAuthenticate(this.state);
     }
 

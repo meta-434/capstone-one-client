@@ -3,3 +3,8 @@ header {
     min-height: 100px;
     padding-top: 20px;
 }
+
+.sessions-section > h2 {
+    margin-top: 70px;
+}
+

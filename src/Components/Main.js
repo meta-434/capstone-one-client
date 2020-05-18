@@ -4,9 +4,14 @@ import './Main.css';
 class Main extends Component {
     render() {
         return(
-            <header>
-                Main placeholder.
-            </header>
+            <>
+                <header>
+                    Main placeholder.
+                </header>
+                <section>
+                    The pomodoro technique blah blah blah
+                </section>
+            </>
         );
     }
 }

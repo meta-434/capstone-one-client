@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Timer from 'react-compound-timer';
 import './TimerComponent.css'
+import PomodoroContext from "../PomodoroContext";
 
 const withTimer = timerProps => WrappedComponent => wrappedComponentProps => (
     <Timer {...timerProps}>
@@ -10,6 +11,8 @@ const withTimer = timerProps => WrappedComponent => wrappedComponentProps => (
 );
 
 class TimerComponent extends Component {
+    static contextType = PomodoroContext;
+
     componentDidMount() {
         const { setCheckpoints, stop } = this.props.timer;
 
@@ -54,6 +57,10 @@ class TimerComponent extends Component {
                     <button onClick={start5}>Start5</button>
                     <button onClick={reset}>Reset</button>
                 </section>
+                {(!!this.context.authToken)
+                    ? <><p>logged in</p></>
+                    : <><p>not logged in</p></>
+                }
             </>
         );
     }
