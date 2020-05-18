@@ -57,8 +57,8 @@ class App extends Component {
   }
 
   handlePostNote = ({note_name, note_content, ownerId}) => {
-    fetch(process.env.REACT_APP_SERVER_URL + `/notes`, {
-      method: 'POST',
+    fetch(process.env.REACT_APP_SERVER_URL + `/api/notes`, {
+      method: 'post',
       headers: {
         'Content-Type': 'application/json',
         'access-token': `${this.state.authToken}`
@@ -69,6 +69,7 @@ class App extends Component {
         note_owner: ownerId
       })
     })
+        .then(res => this.handleGetNotes())
         .catch(error => console.error(error));
   }
 
@@ -81,16 +82,30 @@ class App extends Component {
       }
     })
         .then(response => response.json())
-        .then(responseJson =>
-            this.setState({
-              notes: responseJson
-            })
+        .then(responseJson => {
+          console.log('responseJson', responseJson);
+              if (responseJson.success && responseJson.success === false) {
+                throw new Error('error in getting notes')
+              } else {
+                this.setState({
+                  notes: responseJson
+                })
+              }
+            }
         )
         .catch(error => console.error(error));
   }
 
-  handleDeleteNotes = () => {
-
+  handleDeleteNote = (id) => {
+    fetch(process.env.REACT_APP_SERVER_URL + `/api/notes/${id}`, {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json',
+        'access-token': `${this.state.authToken}`
+      }
+    })
+        .then(res => this.handleGetNotes())
+        .catch(error => console.error(error));
   }
 
   render () {
@@ -102,6 +117,8 @@ class App extends Component {
       handlePostAuthenticate: this.handlePostAuthenticate,
       logOut: this.logOut,
       handleGetNotes: this.handleGetNotes,
+      handlePostNote: this.handlePostNote,
+      handleDeleteNote: this.handleDeleteNote,
     }
     return (
         <PomodoroContext.Provider value={(context)}>
