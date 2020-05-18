@@ -17,8 +17,14 @@ class App extends Component {
     authToken: undefined,
   }
 
+  componentDidMount() {
+
+  }
+
   logOut = () => {
     this.setState({authToken: undefined});
+    console.log('sessionStorage', sessionStorage);
+    sessionStorage.clear();
   }
 
   handlePostAuthenticate = ({ username, password }) => {
@@ -41,6 +47,9 @@ class App extends Component {
            throw new Error(' error in authenticating. check username and password. ');
           }
         })
+        .then(() => {
+          sessionStorage.setItem('access-token', this.state.authToken);
+        })
         .catch(error => console.error(error));
   };
 
@@ -61,7 +70,7 @@ class App extends Component {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'access-token': `${this.state.authToken}`
+        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
       },
       body: JSON.stringify({
         note_name,
@@ -78,7 +87,7 @@ class App extends Component {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'access-token': `${this.state.authToken}`
+        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
       }
     })
         .then(response => response.json())

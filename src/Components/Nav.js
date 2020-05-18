@@ -16,7 +16,7 @@ class Nav extends Component {
         <nav>
             <h1 className="nav-h1"><Link to='/'>Pomodoro Timer</Link></h1>
             <button><Link to='/timer'>Timer</Link></button>
-            {(!!this.context.authToken)
+            {(!!this.context.authToken || sessionStorage[`access-token`])
                 ? <>
                     <button><Link to='/sessions/'>Sessions</Link></button>
                     <button><Link to='/notes/'>Notes</Link></button>
