@@ -23,7 +23,24 @@ class App extends Component {
     sessionStorage.clear();
   }
 
+  handlePatchAuthenticate = ({ username, password }) => {
+    fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
+      method: 'patch',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      body: JSON.stringify({
+        'username': username,
+        'password': password,
+      })
+    })
+        .then(result =>  result.json())
+        .catch(error => console.error(error));
+  };
+
   handlePostAuthenticate = ({ username, password }) => {
+    console.log('whoah fuck')
     fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
       method: 'post',
       headers: {
@@ -145,7 +162,7 @@ class App extends Component {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json',
-        'access-token': `${this.state.authToken}`
+        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
       }
     })
         .then(res => this.handleGetNotes())
@@ -160,6 +177,7 @@ class App extends Component {
       username,
       authToken,
       handlePostAuthenticate: this.handlePostAuthenticate,
+      handlePatchAuthenticate: this.handlePatchAuthenticate,
       logOut: this.logOut,
       handleGetNotes: this.handleGetNotes,
       handlePostNote: this.handlePostNote,

@@ -23,6 +23,7 @@ class Login extends Component {
     }
 
     handlePostSubmit = (e) => {
+        console.log('login being used?')
         e.preventDefault();
         this.context.handlePostAuthenticate(this.state);
         this.props.history.push('/timer');
