@@ -1,14 +1,4 @@
 {
   "version": 1,
-  "name": "pomodoro-client",
-  "routes": [
-    {
-      "src": "^/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": ".*",
-      "dest": "/index.html"
-    }
-  ]
+  "name": "pomodoro-client"
 }
