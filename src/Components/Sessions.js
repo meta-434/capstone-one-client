@@ -95,61 +95,67 @@ class Sessions extends Component {
     render() {
         return(
             <>
-                <header>My Sessions</header>
-                <form
-                    className="react-form"
-                    onSubmit={this.handlePostSubmit}>
-                    <input
-                        type="text"
-                        id="session-name"
-                        name="session-name"
-                        className="session-name"
-                        onChange={this.handleSessionName}
-                        defaultValue={'enter session name'}
-                        aria-label="session name"
-                        aria-required="true"
-                        aria-describedby="error-box"
-                    />
-                    <label htmlFor="session-description">session description: </label>
-                    <textarea
-                        type="text"
-                        id="session-description"
-                        name="session-description"
-                        className="session-description"
-                        onChange={this.handleSessionContent}
-                        defaultValue={'enter session description'}
-                        aria-label="session description"
-                        aria-required="true"
-                        aria-describedby="error-box"
-                    />
-                    <button
-                        className="submit-button"
-                        type="submit"
-                        disabled={!this.state.nameValid || !this.state.descriptionValid}>
-                        Submit
-                    </button>
+                <section>
+                    <header>My Saved Sessions</header>
+                    <h3>review past work sessions</h3>
+                </section>
+                <section>
+                    <form
+                        className="react-form"
+                        onSubmit={this.handlePostSubmit}>
+                        <input
+                            type="text"
+                            id="session-name"
+                            name="session-name"
+                            className="session-name"
+                            onChange={this.handleSessionName}
+                            defaultValue={'enter session name'}
+                            aria-label="session name"
+                            aria-required="true"
+                            aria-describedby="error-box"
+                        />
+                        <label htmlFor="session-description">session description: </label>
+                        <textarea
+                            id="session-description"
+                            name="session-description"
+                            className="session-description"
+                            onChange={this.handleSessionContent}
+                            defaultValue={'enter session description'}
+                            aria-label="session description"
+                            aria-required="true"
+                            aria-describedby="error-box"
+                        />
+                        <button
+                            className="submit-button"
+                            type="submit"
+                            disabled={!this.state.nameValid || !this.state.descriptionValid}>
+                            Submit
+                        </button>
+                    </form>
                     <section className="error-box" id="error-box" aria-live="assertive">
                         {this.state.nameValidation}
                         <br />
                         {this.state.descriptionValidation}
                     </section>
-                </form>
-                <PomodoroContext.Consumer>
-                    {({sessions}) => {
-                        if (sessions.length !== 0) {
-                            return sessions.map((session, index) => {
-                                return (
-                                    <section className="sessions-display" key={index} id={session.id}>
-                                        <h3>{session.session_name}</h3>
-                                        <h4>↳ {session.session_description}</h4>
-                                        <p>session completed: {session.session_end}</p>
-                                        <button onClick={() => this.handleDelete(session.id)}>Delete</button>
-                                    </section>
-                                );
-                            }).reverse();
-                        }
-                    }}
-                </PomodoroContext.Consumer>
+                </section>
+                <section>
+                    <PomodoroContext.Consumer>
+                        {({sessions}) => {
+                            if (sessions.length !== 0) {
+                                return sessions.map((session, index) => {
+                                    return (
+                                        <section className="sessions-display" key={index} id={session.id}>
+                                            <h3>{session.session_name}</h3>
+                                            <h4>↳ {session.session_description}</h4>
+                                            <p>session completed: {session.session_end}</p>
+                                            <button onClick={() => this.handleDelete(session.id)}>Delete</button>
+                                        </section>
+                                    );
+                                }).reverse();
+                            }
+                        }}
+                    </PomodoroContext.Consumer>
+                </section>
             </>
         );
     }

@@ -2,7 +2,8 @@ nav {
     display: flex;
 }
 
-h1 {
+nav > h1 {
+    color: #BF616A;
     width: calc(100% - 250px);
     text-align: left;
     font-size: larger;
@@ -12,5 +13,6 @@ h1 {
 }
 
 a, a:visited {
+    color: inherit;
     text-decoration: none;
 }

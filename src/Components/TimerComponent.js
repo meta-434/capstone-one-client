@@ -45,10 +45,16 @@ class TimerComponent extends Component {
         }
         return (
             <>
-                <header>
-                    Pomodoro Timer
-                </header>
+                <section>
+                    <header>
+                        Pomodoro Timer
+                    </header>
+                </section>
                 <section id="timer-component">
+                    {(!!this.context.authToken || sessionStorage[`access-token`])
+                        ? ''
+                        : <><p>You are not logged in</p></>
+                    }
                     <Timer.Minutes formatValue={value => `${(value < 10 ? `0${value}` : value)}`}/>
                     :
                     <Timer.Seconds formatValue={value => `${(value < 10 ? `0${value}` : value)}`}/>
@@ -57,10 +63,7 @@ class TimerComponent extends Component {
                     <button onClick={start5}>Start5</button>
                     <button onClick={reset}>Reset</button>
                 </section>
-                {(!!this.context.authToken || sessionStorage[`access-token`])
-                    ? ''
-                    : <><p>You are not logged in</p></>
-                }
+
             </>
         );
     }

@@ -24,11 +24,11 @@ class App extends Component {
   }
 
   handlePatchAuthenticate = ({ username, password }) => {
+    console.log('for signup')
     fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
       method: 'patch',
       headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         'username': username,
@@ -40,7 +40,7 @@ class App extends Component {
   };
 
   handlePostAuthenticate = ({ username, password }) => {
-    console.log('whoah fuck')
+    console.log('for login');
     fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
       method: 'post',
       headers: {

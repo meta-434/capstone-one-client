@@ -10,6 +10,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Inter';
+  background-color: #2E3440;
 }
 
 body {
@@ -22,7 +23,6 @@ body {
 nav,
 footer {
   padding: 1% 0;
-  background-color: #aaa;
 }
 
 nav {
@@ -42,11 +42,11 @@ header {
 section {
   min-height: 200px;
   padding: 30px 15px;
-  background-color: #bbb;
+  color: #5E81AC;
 }
 
 section:nth-child(even) {
-  background-color: #ddd;
+  color: #8FBCBB;
 }
 
 p {

@@ -95,60 +95,65 @@ class Notes extends Component {
     render() {
         return(
             <>
-                <header>My Notes</header>
-                <form
-                    className="react-form"
-                    onSubmit={this.handlePostSubmit}>
-                    <input
-                        type="text"
-                        id="note-name"
-                        name="note-name"
-                        className="note-name"
-                        onChange={this.handleNoteName}
-                        defaultValue={'enter note name'}
-                        aria-label="note name"
-                        aria-required="true"
-                        aria-describedby="error-box"
-                    />
-                    <label htmlFor="note-content">note content: </label>
-                    <textarea
-                        type="text"
-                        id="note-content"
-                        name="note-content"
-                        className="note-content"
-                        onChange={this.handleNoteContent}
-                        defaultValue={'enter note content'}
-                        aria-label="note content"
-                        aria-required="true"
-                        aria-describedby="error-box"
-                    />
-                    <button
-                        className="submit-button"
-                        type="submit"
-                        disabled={!this.state.nameValid || !this.state.contentValid}>
-                        Submit
-                    </button>
+                <section>
+                    <header>My Notes</header>
+                </section>
+                <section>
+                    <form
+                        className="react-form"
+                        onSubmit={this.handlePostSubmit}>
+                        <input
+                            type="text"
+                            id="note-name"
+                            name="note-name"
+                            className="note-name"
+                            onChange={this.handleNoteName}
+                            defaultValue={'enter note name'}
+                            aria-label="note name"
+                            aria-required="true"
+                            aria-describedby="error-box"
+                        />
+                        <label htmlFor="note-content">note content: </label>
+                        <textarea
+                            id="note-content"
+                            name="note-content"
+                            className="note-content"
+                            onChange={this.handleNoteContent}
+                            defaultValue={'enter note content'}
+                            aria-label="note content"
+                            aria-required="true"
+                            aria-describedby="error-box"
+                        />
+                        <button
+                            className="submit-button"
+                            type="submit"
+                            disabled={!this.state.nameValid || !this.state.contentValid}>
+                            Submit
+                        </button>
+                    </form>
                     <section className="error-box" id="error-box" aria-live="assertive">
                         {this.state.nameValidation}
                         <br />
                         {this.state.contentValidation}
                     </section>
-                </form>
-                <PomodoroContext.Consumer>
-                    {({notes}) => {
-                        if (notes.length !== 0) {
-                            return notes.map((note, index) => {
-                                return (
-                                    <section className="notes-display" key={index} id={note.id}>
-                                        <h3>{note.note_name}</h3>
-                                        <h4>↳ {note.note_content}</h4>
-                                        <button onClick={() => this.handleDelete(note.id)}>Delete</button>
-                                    </section>
-                                );
-                            }).reverse();
-                        }
-                    }}
-                </PomodoroContext.Consumer>
+                </section>
+                <section>
+                    <PomodoroContext.Consumer>
+                        {({notes}) => {
+                            if (notes.length !== 0) {
+                                return notes.map((note, index) => {
+                                    return (
+                                        <div className="notes-display" key={index} id={note.id}>
+                                            <h3>{note.note_name}</h3>
+                                            <h4>↳ {note.note_content}</h4>
+                                            <button onClick={() => this.handleDelete(note.id)}>Delete</button>
+                                        </div>
+                                    );
+                                }).reverse();
+                            }
+                        }}
+                    </PomodoroContext.Consumer>
+                </section>
             </>
         );
     }

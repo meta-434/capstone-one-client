@@ -7,3 +7,9 @@ header {
 #timer-component {
     font-size: 100px;
 }
+
+#timer-component > p {
+    font-size: 15px;
+    border: 2px dashed darkred;
+    border-radius: 5px;
+}
