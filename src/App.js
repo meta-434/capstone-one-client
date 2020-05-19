@@ -15,18 +15,17 @@ class App extends Component {
     sessions: [],
     notes: [],
     authToken: undefined,
+    error: undefined,
   }
 
   logOut = () => {
     this.setState({authToken: undefined});
-    console.log('sessionStorage', sessionStorage);
     sessionStorage.clear();
   }
 
-  handlePatchAuthenticate = ({ username, password }) => {
-    console.log('for signup')
-    fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
-      method: 'patch',
+  handlePostSignup = ({ username, password }) => {
+    fetch(process.env.REACT_APP_SERVER_URL + `/signup`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -35,35 +34,54 @@ class App extends Component {
         'password': password,
       })
     })
+        .then(result => {
+            let json = result.json() // There's always a response body
+            if (result.status >= 200 && result.status < 300) { return json }
+            return json.then(Promise.reject.bind(Promise))
+
+        })
         .then(result =>  result.json())
-        .catch(error => console.error(error));
+        .catch(error => {
+          this.setState({error});
+        });
   };
 
-  handlePostAuthenticate = ({ username, password }) => {
-    console.log('for login');
-    fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        'username': username,
-        'password': password,
-      })
-    })
-        .then(result =>  result.json())
-        .then(resJson => {
-          if (!!resJson.token) {
-            this.setState({ authToken: resJson.token, username })
-            sessionStorage.setItem('access-token', this.state.authToken);
-            sessionStorage.setItem('username', username);
-          }
-          else {
-           throw new Error(' error in authenticating. check username and password. ');
-          }
+    handlePostAuthenticate = ({ username, password }) => {
+        console.log('for login');
+        fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'username': username,
+                'password': password,
+            })
         })
-        .catch(error => console.error(error));
-  };
+            .then(result => {
+                let json = result.json() // There's always a response body
+                if (!(result.status >= 200 && result.status < 300)) {
+                    return json.then(Promise.reject.bind(Promise))
+                }
+                return json;
+            })
+            .then(resJson => {
+                if (!!resJson.token) {
+                    this.setState({ authToken: resJson.token, username })
+                    sessionStorage.setItem('access-token', this.state.authToken);
+                    sessionStorage.setItem('username', username);
+                    this.handleGetSessions();
+                    this.handleGetNotes();
+                }
+                else {
+                    throw new Error(' error in authenticating. check username and password. ');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                this.setState({error});
+            });
+    };
 
   handlePostSession = ({session_name, session_description, ownerId}) => {
     fetch(process.env.REACT_APP_SERVER_URL + `/api/sessions`, {
@@ -79,7 +97,10 @@ class App extends Component {
       })
     })
         .then(res => this.handleGetSessions())
-        .catch(error => console.error(error));
+        .catch(error => {
+          console.error(error);
+          this.setState({error});
+        });
   }
 
   handleGetSessions = () => {
@@ -92,7 +113,6 @@ class App extends Component {
     })
         .then(response => response.json())
         .then(responseJson => {
-              console.log('responseJson', responseJson);
               if (responseJson.success && responseJson.success === false) {
                 throw new Error('error in getting sessions')
               } else {
@@ -102,7 +122,10 @@ class App extends Component {
               }
             }
         )
-        .catch(error => console.error(error));
+        .catch(error => {
+          console.error(error);
+          this.setState({error});
+        });
   }
 
   handleDeleteSession = (id) => {
@@ -114,7 +137,10 @@ class App extends Component {
       }
     })
         .then(res => this.handleGetSessions())
-        .catch(error => console.error(error));
+        .catch(error => {
+          console.error(error);
+          this.setState({error});
+        });
   }
 
   handlePostNote = ({note_name, note_content, ownerId}) => {
@@ -131,7 +157,10 @@ class App extends Component {
       })
     })
         .then(res => this.handleGetNotes())
-        .catch(error => console.error(error));
+        .catch(error => {
+          console.error(error);
+          this.setState({error});
+        });
   }
 
   handleGetNotes = () => {
@@ -144,7 +173,6 @@ class App extends Component {
     })
         .then(response => response.json())
         .then(responseJson => {
-          console.log('responseJson', responseJson);
               if (responseJson.success && responseJson.success === false) {
                 throw new Error('error in getting notes')
               } else {
@@ -154,7 +182,10 @@ class App extends Component {
               }
             }
         )
-        .catch(error => console.error(error));
+        .catch(error => {
+          console.error(error);
+          this.setState({error});
+        });
   }
 
   handleDeleteNote = (id) => {
@@ -166,18 +197,22 @@ class App extends Component {
       }
     })
         .then(res => this.handleGetNotes())
-        .catch(error => console.error(error));
+        .catch(error => {
+          console.error(error);
+          this.setState({error});
+        });
   }
 
   render () {
-    const { sessions, notes, authToken, username } = this.state;
+    const { sessions, notes, authToken, username, error } = this.state;
     const context = {
       sessions,
       notes,
       username,
       authToken,
+      error,
       handlePostAuthenticate: this.handlePostAuthenticate,
-      handlePatchAuthenticate: this.handlePatchAuthenticate,
+      handlePostSignup: this.handlePostSignup,
       logOut: this.logOut,
       handleGetNotes: this.handleGetNotes,
       handlePostNote: this.handlePostNote,

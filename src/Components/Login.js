@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css'
 import PomodoroContext from "../PomodoroContext";
+import ErrorDisplay from "./ErrorDisplay";
 
 class Login extends Component {
 
@@ -89,55 +90,61 @@ class Login extends Component {
 
     render() {
         return(
-            <main className="login-form">
-                <section>
-                    <header>
-                        login to access saved sessions and notes!
-                    </header>
-                </section>
-                <section>
-                    <form
-                        className='react-form'
-                        onSubmit={this.handlePostSubmit}>
-                        <label htmlFor='login-username'>username: </label>
-                        <input
-                            type="text"
-                            id="login-username"
-                            name="login-username"
-                            className="login-username"
-                            onChange={this.handleUsername}
-                            defaultValue={'enter username'}
-                            aria-label="username"
-                            aria-required="true"
-                            aria-describedby="error-box"
-                        />
-                        <label htmlFor='login-password'>password: </label>
-                        <input
-                            type="text"
-                            id="login-password"
-                            name="login-password"
-                            className="login-password"
-                            onChange={this.handlePassword}
-                            defaultValue={'enter password'}
-                            aria-label="password"
-                            aria-required="true"
-                            aria-describedby="error-box"
-                        />
-                        <button
-                            className="submit-button"
-                            type="submit"
-                            disabled={!this.state.usernameValid || !this.state.passwordValid }>
-                            Submit
-                        </button>
-                        <section className="error-box" id="error-box" aria-live="assertive">
-                            {this.state.usernameValidation}
-                            <br />
-                            {this.state.passwordValidation}
-                        </section>
-                    </form>
-                </section>
-            </main>
-
+            <>
+                {
+                    (!!this.context.error)
+                    ? <ErrorDisplay />
+                    : ''
+                }
+                <main className="login-form">
+                    <section>
+                        <header>
+                            login to access saved sessions and notes!
+                        </header>
+                    </section>
+                    <section>
+                        <form
+                            className='react-form'
+                            onSubmit={this.handlePostSubmit}>
+                            <label htmlFor='login-username'>username: </label>
+                            <input
+                                type="text"
+                                id="login-username"
+                                name="login-username"
+                                className="login-username"
+                                onChange={this.handleUsername}
+                                defaultValue={'enter username'}
+                                aria-label="username"
+                                aria-required="true"
+                                aria-describedby="error-box"
+                            />
+                            <label htmlFor='login-password'>password: </label>
+                            <input
+                                type="text"
+                                id="login-password"
+                                name="login-password"
+                                className="login-password"
+                                onChange={this.handlePassword}
+                                defaultValue={'enter password'}
+                                aria-label="password"
+                                aria-required="true"
+                                aria-describedby="error-box"
+                            />
+                            <button
+                                className="submit-button"
+                                type="submit"
+                                disabled={!this.state.usernameValid || !this.state.passwordValid }>
+                                Submit
+                            </button>
+                            <section className="error-box" id="error-box" aria-live="assertive">
+                                {this.state.usernameValidation}
+                                <br />
+                                {this.state.passwordValidation}
+                            </section>
+                        </form>
+                    </section>
+                </main>
+            </>
         );
     }
 }

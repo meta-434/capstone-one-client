@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import './Main.css';
+import PomodoroContext from "../PomodoroContext";
 
 class Main extends Component {
+
+    static contextType = PomodoroContext;
+
     render() {
         return(
             <>
                 <section>
+                    <p>{(this.context.error ? this.context.error.error : '')}</p>
                     <header>
                         What is the Pomodoro Technique ?
                     </header>

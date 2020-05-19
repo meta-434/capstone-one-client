@@ -18,14 +18,13 @@ class Signup extends Component {
     }
 
     componentDidMount() {
-        console.log('hi')
         this.validateUsername(this.state.username);
         this.validatePassword(this.state.password);
     }
 
     handlePatchSubmit = (e) => {
         e.preventDefault();
-        this.context.handlePatchAuthenticate(this.state);
+        this.context.handlePostSignup(this.state);
         this.props.history.push('/');
     }
 
@@ -91,7 +90,7 @@ class Signup extends Component {
         return(
             <main className="signup-form">
                 <header>
-                    Signup placeholder.
+                    signup to save your sessions and notes!
                 </header>
                 <form
                     className='react-form'

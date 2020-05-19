@@ -25,6 +25,10 @@ footer {
   padding: 1% 0;
 }
 
+.error {
+  margin-top: 140px;
+}
+
 nav {
   position: fixed;
   top: 0;
