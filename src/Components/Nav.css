@@ -2,17 +2,39 @@ nav {
     display: flex;
 }
 
-nav > h1 {
-    color: #BF616A;
+.nav-h1 {
     width: calc(100% - 250px);
     text-align: left;
-    font-size: larger;
     padding: 0;
     margin: 0 0 0 0.5%;
-    font-family: 'Inter Bold', sans-serif;
 }
 
-a, a:visited {
-    color: inherit;
+.nav-h1 > a {
+    color: #BF616A;
+    font-size: 25px;
+    font-family: 'Inter Bold', sans-serif;
     text-decoration: none;
+}
+
+nav > p {
+    width: 220px;
+    color: #5e81ac;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+nav > button {
+    border: 1px #8fbcbb solid;
+    border-radius: 3px;
+    background-color: #8fbcbb;
+    margin-right: 10px;
+}
+
+nav > button > a, nav > button {
+    width: 110px;
+    text-decoration: none;
+    background-color: #8fbcbb;
+    color: #4C566A;
+    font-size: 18px;
+    font-weight: bold;
 }
