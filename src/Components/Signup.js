@@ -89,48 +89,52 @@ class Signup extends Component {
     render() {
         return(
             <main className="signup-form">
-                <header>
-                    signup to save your sessions and notes!
-                </header>
-                <form
-                    className='react-form'
-                    onSubmit={this.handlePatchSubmit}>
-                    <label htmlFor='signup-username'>username: </label>
-                    <input
-                        type="text"
-                        id="signup-username"
-                        name="signup-username"
-                        className="signup-username"
-                        onChange={this.handleUsername}
-                        defaultValue={'enter username'}
-                        aria-label="username"
-                        aria-required="true"
-                        aria-describedby="error-box"
-                    />
-                    <label htmlFor='signup-password'>password: </label>
-                    <input
-                        type="text"
-                        id="signup-password"
-                        name="signup-password"
-                        className="signup-password"
-                        onChange={this.handlePassword}
-                        defaultValue={'enter password'}
-                        aria-label="password"
-                        aria-required="true"
-                        aria-describedby="error-box"
-                    />
-                    <button
-                        className="submit-button"
-                        type="submit"
-                        disabled={!this.state.usernameValid || !this.state.passwordValid }>
-                        Submit
-                    </button>
-                    <section className="error-box" id="error-box" aria-live="assertive">
-                        {this.state.usernameValidation}
-                        <br />
-                        {this.state.passwordValidation}
-                    </section>
-                </form>
+                <section>
+                    <header>
+                        signup to save your sessions and notes!
+                    </header>
+                </section>
+                <section>
+                    <form
+                        className='react-form'
+                        onSubmit={this.handlePatchSubmit}>
+                        <label htmlFor='signup-username'>username: </label>
+                        <input
+                            type="text"
+                            id="signup-username"
+                            name="signup-username"
+                            className="signup-username"
+                            onChange={this.handleUsername}
+                            defaultValue={'enter username'}
+                            aria-label="username"
+                            aria-required="true"
+                            aria-describedby="error-box"
+                        />
+                        <label htmlFor='signup-password'>password: </label>
+                        <input
+                            type="text"
+                            id="signup-password"
+                            name="signup-password"
+                            className="signup-password"
+                            onChange={this.handlePassword}
+                            defaultValue={'enter password'}
+                            aria-label="password"
+                            aria-required="true"
+                            aria-describedby="error-box"
+                        />
+                        <button
+                            className="submit-button"
+                            type="submit"
+                            disabled={!this.state.usernameValid || !this.state.passwordValid }>
+                            Submit
+                        </button>
+                        <section className="error-box" id="error-box" aria-live="assertive">
+                            {this.state.usernameValidation}
+                            <br />
+                            {this.state.passwordValidation}
+                        </section>
+                    </form>
+                </section>
             </main>
 
         );

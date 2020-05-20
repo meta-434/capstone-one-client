@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PomodoroContext from "../PomodoroContext";
+import './Notes.css'
 
 class Notes extends Component {
 
@@ -67,7 +68,7 @@ class Notes extends Component {
 
         if (!content) {
             hasError = true;
-            validationMessages = ' Note cannot be blank. '
+            validationMessages = ' content cannot be blank. '
         }
 
         else {
@@ -98,10 +99,11 @@ class Notes extends Component {
                 <section>
                     <header>My Notes</header>
                 </section>
-                <section>
+                <section className="react-form-section">
                     <form
                         className="react-form"
                         onSubmit={this.handlePostSubmit}>
+                        <label htmlFor="note-name">note name: </label>
                         <input
                             type="text"
                             id="note-name"
@@ -137,7 +139,7 @@ class Notes extends Component {
                         {this.state.contentValidation}
                     </section>
                 </section>
-                <section>
+                <section className="notes-display">
                     <PomodoroContext.Consumer>
                         {({notes}) => {
                             if (notes.length !== 0) {

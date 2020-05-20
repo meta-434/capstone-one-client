@@ -29,6 +29,8 @@ nav > button {
     border-radius: 3px;
     background-color: #8fbcbb;
     margin-right: 10px;
+    min-height: 35px;
+    max-width: 150px;
 }
 
 nav > button > a, nav > button {

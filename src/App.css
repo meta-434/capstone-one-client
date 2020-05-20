@@ -10,7 +10,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Inter';
-  background: url('background.png') no-repeat center center fixed;
+  background: url('images/background.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -60,4 +60,15 @@ p {
 
 p + p {
   margin-top: 15px;
+}
+
+button:disabled {
+  border: 2px #4C566A solid;
+  border-radius: 3px;
+  color: #4C566A;
+}
+
+button {
+  border: 2px inherit solid;
+  border-radius: 3px;
 }
