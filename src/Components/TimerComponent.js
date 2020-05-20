@@ -71,7 +71,7 @@ class TimerComponent extends Component {
 
         if (!name) {
             hasError = true;
-            validationMessages = ' name cannot be blank. '
+            validationMessages = ' session name can\'t be blank '
         }
         else {
             validationMessages = '';
@@ -89,7 +89,7 @@ class TimerComponent extends Component {
 
         if (!description) {
             hasError = true;
-            validationMessages = ' description shouldn\'t be blank... how can you remember what you did? '
+            validationMessages = ' session description can\'t be blank '
         }
 
         else {
@@ -133,14 +133,18 @@ class TimerComponent extends Component {
                 <ErrorDisplay />
                 <section>
                     <header>
-                        Pomodoro Timer
+                        Session Timer
                     </header>
-                </section>
-                <section id="timer-component">
                     {(!!this.context.authToken || sessionStorage[`access-token`])
                         ? ''
-                        : <><p>You are not logged in</p></>
+                        : <>
+                            <p>You are not logged in</p>
+                            <br />
+                            <p>You may still use the timer, but you are unable to save sessions or notes</p>
+                        </>
                     }
+                </section>
+                <section id="timer-component">
                     <Timer.Minutes formatValue={value => `${(value < 10 ? `0${value}` : value)}`}/>
                     :
                     <Timer.Seconds formatValue={value => `${(value < 10 ? `0${value}` : value)}`}/>
@@ -152,19 +156,30 @@ class TimerComponent extends Component {
                 <section>
                     {
                         (!!notes && (notes.length > 0))
+                        ? <header className='note-header'>
+                                Note
+                        </header>
+                        : ``
+                    }
+                    {
+                        (!!notes && (notes.length > 0))
                             ? <div className='timer-note'>
-                                <p>{notes[0].note_name}</p>
-                                <p>{notes[0].note_content}</p>
+                                <p className='timer-note-title'>{notes[0].note_name}</p>
+                                <p className='timer-note-content'>{notes[0].note_content}</p>
                             </div>
                                 : ``
                     }
                 </section>
                 {(!!this.context.authToken || sessionStorage[`access-token`])
                     ? <>
-                         <section>
+                        <header className="form-header">
+                            Submit Session
+                        </header>
+                         <section className='form-and-error'>
                             <form
                                 className="react-form"
                                 onSubmit={this.handlePostSubmit}>
+                                <label htmlFor="session-name">session name</label>
                                 <input
                                     type="text"
                                     id="session-name"
@@ -176,7 +191,7 @@ class TimerComponent extends Component {
                                     aria-required="true"
                                     aria-describedby="error-box"
                                 />
-                                <label htmlFor="session-description">session description: </label>
+                                <label htmlFor="session-description">session description</label>
                                 <textarea
                                     id="session-description"
                                     name="session-description"

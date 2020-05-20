@@ -49,10 +49,6 @@ section {
   color: #5E81AC;
 }
 
-section:nth-child(even) {
-  color: #8FBCBB;
-}
-
 p {
   margin: 0 auto;
   max-width: 650px;
