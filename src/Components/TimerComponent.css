@@ -28,7 +28,8 @@ header {
 }
 
 .timer-note {
-    border: 2px #5e81ac solid;
+    border: 3px #5e81ac solid;
+    border-radius: 5px;
     max-width: 33%;
     margin-left: 33%;
     margin-right:33%;
@@ -92,9 +93,21 @@ form > button {
 
 .form-and-error {
     border: 3px solid #8fbcbb;
+    border-radius: 5px;
     width: 33%;
     margin-left: 33%;
     margin-right: 33%;
     padding-bottom: 0px;
     margin-bottom: 100px;
+}
+
+.timer-header {
+    color: #8fbcbb;
+}
+
+form > label {
+    font-size: 25px;
+    width: 300px;
+    margin-left: calc(50% - 150px);
+    margin-right: auto;
 }

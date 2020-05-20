@@ -132,7 +132,7 @@ class TimerComponent extends Component {
             <>
                 <ErrorDisplay />
                 <section>
-                    <header>
+                    <header className="timer-header">
                         Session Timer
                     </header>
                     {(!!this.context.authToken || sessionStorage[`access-token`])
