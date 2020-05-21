@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PomodoroContext from "../PomodoroContext";
+import PomodoroContext from "../../PomodoroContext";
 import { Link } from "react-router-dom";
 import './Nav.css';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Signup.css'
-import PomodoroContext from "../PomodoroContext";
+import PomodoroContext from "../../PomodoroContext";
 
 class Signup extends Component {
 

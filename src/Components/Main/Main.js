@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Main.css';
-import timer from '../images/timer.png';
-import sessions from '../images/sessions.png'
-import notes from '../images/notes.png';
-import PomodoroContext from "../PomodoroContext";
+import timer from '../../images/timer.png';
+import sessions from '../../images/sessions.png'
+import notes from '../../images/notes.png';
+import PomodoroContext from "../../PomodoroContext";
 
 class Main extends Component {
 

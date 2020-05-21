@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import Nav from './Components/Nav.js';
-import Login from './Components/Login.js';
-import Signup from './Components/Signup.js';
-import Main from './Components/Main.js';
-import Notes from './Components/Notes.js';
-import Sessions from './Components/Sessions.js';
-import TimerComponent from './Components/TimerComponent.js';
+import Nav from './Components/Nav/Nav.js';
+import Login from './Components/Login/Login.js';
+import Signup from './Components/Signup/Signup.js';
+import Main from './Components/Main/Main.js';
+import Notes from './Components/Notes/Notes.js';
+import Sessions from './Components/Sessions/Sessions.js';
+import TimerComponent from './Components/TimerComponent/TimerComponent.js';
 import PomodoroContext from './PomodoroContext';
 import './App.css'
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Timer from 'react-compound-timer';
 import './TimerComponent.css'
-import PomodoroContext from "../PomodoroContext";
-import ErrorDisplay from "./ErrorDisplay";
+import PomodoroContext from "../../PomodoroContext";
+import ErrorDisplay from "../ErrorDisplay/ErrorDisplay";
 
 const withTimer = timerProps => WrappedComponent => wrappedComponentProps => (
     <Timer {...timerProps}>

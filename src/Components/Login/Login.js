@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css'
-import PomodoroContext from "../PomodoroContext";
-import ErrorDisplay from "./ErrorDisplay";
+import PomodoroContext from "../../PomodoroContext";
+import ErrorDisplay from "../ErrorDisplay/ErrorDisplay";
 
 class Login extends Component {
 
