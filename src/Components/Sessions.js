@@ -6,8 +6,8 @@ class Sessions extends Component {
 
     static contextType = PomodoroContext;
 
-    handleDelete = (id) => {
-        this.context.handleDeleteSession(id);
+    handleDelete = (session_name) => {
+        this.context.handleDeleteSession(session_name);
     }
 
     render() {
@@ -27,7 +27,7 @@ class Sessions extends Component {
                                             <h3>{session.session_name}</h3>
                                             <h4>↳ {session.session_description}</h4>
                                             <p>session completed: {session.session_end}</p>
-                                            <button onClick={() => this.handleDelete(session.id)}>Delete</button>
+                                            <button onClick={() => this.handleDelete(session.session_name)}>Delete</button>
                                         </div>
                                     );
                                 }).reverse();

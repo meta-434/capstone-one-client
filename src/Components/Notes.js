@@ -23,8 +23,8 @@ class Notes extends Component {
         this.validateContent(this.state.content);
     }
 
-    handleDelete = (id) => {
-        this.context.handleDeleteNote(id);
+    handleDelete = (note_name) => {
+        this.context.handleDeleteNote(note_name);
     }
 
     handlePostSubmit = (e) => {
@@ -142,13 +142,13 @@ class Notes extends Component {
                 <section className="notes-display">
                     <PomodoroContext.Consumer>
                         {({notes}) => {
-                            if (notes.length !== 0) {
+                            if (notes.length > 0) {
                                 return notes.map((note, index) => {
                                     return (
                                         <div className="notes-display" key={index} id={note.id}>
                                             <h3>{note.note_name}</h3>
                                             <h4>↳ {note.note_content}</h4>
-                                            <button onClick={() => this.handleDelete(note.id)}>Delete</button>
+                                            <button onClick={() => this.handleDelete(note.note_name)}>Delete</button>
                                         </div>
                                     );
                                 }).reverse();

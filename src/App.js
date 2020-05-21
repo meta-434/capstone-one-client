@@ -14,7 +14,7 @@ class App extends Component {
   state = {
     sessions: [],
     notes: [],
-    authToken: undefined,
+    authToken: 'abc',
     error: undefined,
   }
 
@@ -84,123 +84,38 @@ class App extends Component {
     };
 
   handlePostSession = ({session_name, session_description, ownerId}) => {
-    fetch(process.env.REACT_APP_SERVER_URL + `/api/sessions`, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
-      },
-      body: JSON.stringify({
-        session_name,
-        session_description,
-        session_owner: ownerId
-      })
-    })
-        .then(res => this.handleGetSessions())
-        .catch(error => {
-          console.error(error);
-          this.setState({error});
-        });
+      const newSession = {session_name, session_description, ownerId};
+      const currentSessions = this.state.sessions;
+      currentSessions.push(newSession)
+      this.setState({sessions: currentSessions});
   }
 
   handleGetSessions = () => {
-    fetch(process.env.REACT_APP_SERVER_URL+ `/api/sessions`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
-      }
-    })
-        .then(response => response.json())
-        .then(responseJson => {
-              if (responseJson.success && responseJson.success === false) {
-                throw new Error('error in getting sessions')
-              } else {
-                this.setState({
-                  sessions: responseJson
-                })
-              }
-            }
-        )
-        .catch(error => {
-          console.error(error);
-          this.setState({error});
-        });
+    return this.state.sessions;
   }
 
-  handleDeleteSession = (id) => {
-    fetch(process.env.REACT_APP_SERVER_URL + `/api/sessions/${id}`, {
-      method: 'delete',
-      headers: {
-        'Content-Type': 'application/json',
-        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
-      }
-    })
-        .then(res => this.handleGetSessions())
-        .catch(error => {
-          console.error(error);
-          this.setState({error});
-        });
+  handleDeleteSession = (session_name) => {
+    const { sessions } = this.state;
+    const filteredSessions = sessions.filter(session => session.session_name !== session_name);
+    this.setState({sessions: filteredSessions})
   }
 
   handlePostNote = ({note_name, note_content, ownerId}) => {
-    fetch(process.env.REACT_APP_SERVER_URL + `/api/notes`, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
-      },
-      body: JSON.stringify({
-        note_name,
-        note_content,
-        note_owner: ownerId
-      })
-    })
-        .then(res => this.handleGetNotes())
-        .catch(error => {
-          console.error(error);
-          this.setState({error});
-        });
+      const newNote = {note_name, note_content, ownerId};
+      const currentNotes = this.state.notes;
+      currentNotes.push(newNote)
+      this.setState({notes: currentNotes});
   }
 
   handleGetNotes = () => {
-    fetch(process.env.REACT_APP_SERVER_URL+ `/api/notes`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
-      }
-    })
-        .then(response => response.json())
-        .then(responseJson => {
-              if (responseJson.success && responseJson.success === false) {
-                throw new Error('error in getting notes')
-              } else {
-                this.setState({
-                  notes: responseJson
-                })
-              }
-            }
-        )
-        .catch(error => {
-          console.error(error);
-          this.setState({error});
-        });
+    return this.state.notes;
   }
 
-  handleDeleteNote = (id) => {
-    fetch(process.env.REACT_APP_SERVER_URL + `/api/notes/${id}`, {
-      method: 'delete',
-      headers: {
-        'Content-Type': 'application/json',
-        'access-token': `${this.state.authToken || sessionStorage[`access-token`]}`
-      }
-    })
-        .then(res => this.handleGetNotes())
-        .catch(error => {
-          console.error(error);
-          this.setState({error});
-        });
+  handleDeleteNote = (note_name) => {
+      const { notes } = this.state;
+      const filteredNotes = notes.filter(note => note.note_name !== note_name);
+      console.log(filteredNotes);
+      this.setState({notes: filteredNotes})
   }
 
   render () {
