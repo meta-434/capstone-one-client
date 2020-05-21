@@ -14,7 +14,6 @@ class App extends Component {
   state = {
     sessions: [],
     notes: [],
-    authToken: 'abc',
     error: undefined,
   }
 
@@ -23,65 +22,20 @@ class App extends Component {
     sessionStorage.clear();
   }
 
+
+
   handlePostSignup = ({ username, password }) => {
-    fetch(process.env.REACT_APP_SERVER_URL + `/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        'username': username,
-        'password': password,
-      })
-    })
-        .then(result => {
-            let json = result.json() // There's always a response body
-            if (result.status >= 200 && result.status < 300) { return json }
-            return json.then(Promise.reject.bind(Promise))
+    console.log('signup placeholder');
 
-        })
-        .then(result =>  result.json())
-        .catch(error => {
-          this.setState({error});
-        });
-  };
+  }
 
-    handlePostAuthenticate = ({ username, password }) => {
-        console.log('for login');
-        fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                'username': username,
-                'password': password,
-            })
-        })
-            .then(result => {
-                let json = result.json() // There's always a response body
-                if (!(result.status >= 200 && result.status < 300)) {
-                    return json.then(Promise.reject.bind(Promise))
-                }
-                return json;
-            })
-            .then(resJson => {
-                if (!!resJson.token) {
-                    this.setState({ authToken: resJson.token, username })
-                    sessionStorage.setItem('access-token', this.state.authToken);
-                    sessionStorage.setItem('username', username);
-                    this.handleGetSessions();
-                    this.handleGetNotes();
-                }
-                else {
-                    throw new Error(' error in authenticating. check username and password. ');
-                }
-            })
-            .catch(error => {
-                console.error(error);
-                this.setState({error});
-            });
-    };
+  handlePostAuthenticate = ({ username, password }) => {
+      this.setState({ authToken: username })
+      sessionStorage.setItem('access-token', 'abc');
+      sessionStorage.setItem('username', username);
+      this.handleGetSessions();
+      this.handleGetNotes();
+  }
 
   handlePostSession = ({session_name, session_description, ownerId}) => {
       const newSession = {session_name, session_description, ownerId};
