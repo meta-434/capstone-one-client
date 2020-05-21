@@ -25,7 +25,9 @@ class Signup extends Component {
     handlePatchSubmit = (e) => {
         e.preventDefault();
         this.context.handlePostSignup(this.state);
-        this.props.history.push('/');
+        if (this.context.authToken || sessionStorage[`access-token`]) {
+            this.props.history.push('/login');
+        }
     }
 
     handleUsername = (e) => {
