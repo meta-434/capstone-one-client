@@ -33,6 +33,7 @@ class TimerComponent extends Component {
                 time: 0,
                 callback: () => {
                     stop();
+                    window.alert('Time\'s Up!');
                 },
             },
             {
@@ -51,8 +52,7 @@ class TimerComponent extends Component {
         e.preventDefault();
         const {name, description} = this.state;
         this.context.handlePostSession({session_name: name, session_description: description});
-
-        // this.context.handleGetSessions();
+        this.props.history.push('/sessions');
     }
 
     handleSessionName = (e) => {
@@ -114,19 +114,22 @@ class TimerComponent extends Component {
         }
     };
 
-    render() {
+    start25 = () => {
         const { start, reset, setTime } = this.props.timer;
-        const start25 = () => {
-            setTime(1500000);
-            reset();
-            start();
-        }
+        setTime(1500000);
+        reset();
+        start();
+    }
 
-        const start5 = () => {
-            setTime(300000);
-            reset();
-            start();
-        }
+    start5 = () => {
+        const { start, reset, setTime } = this.props.timer;
+        setTime(3000);
+        reset();
+        start();
+    }
+
+    render() {
+        const { reset } = this.props.timer;
         const {notes} = this.context;
         return (
             <>
@@ -149,8 +152,8 @@ class TimerComponent extends Component {
                     :
                     <Timer.Seconds formatValue={value => `${(value < 10 ? `0${value}` : value)}`}/>
                     <br />
-                    <button onClick={start25}>Start25</button>
-                    <button onClick={start5}>Start5</button>
+                    <button onClick={this.start25}>Start25</button>
+                    <button onClick={this.start5}>Start5</button>
                     <button onClick={reset}>Reset</button>
                 </section>
                 <section>
