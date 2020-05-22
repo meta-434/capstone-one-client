@@ -116,7 +116,7 @@ class Notes extends Component {
                             name="note-name"
                             className="note-name"
                             onChange={this.handleNoteName}
-                            defaultValue={'enter note name'}
+                            placeholder={'enter note name'}
                             aria-label="note name"
                             aria-required="true"
                             aria-describedby="error-box"
@@ -127,7 +127,7 @@ class Notes extends Component {
                             name="note-content"
                             className="note-content"
                             onChange={this.handleNoteContent}
-                            defaultValue={'enter note content'}
+                            placeholder={'enter note content'}
                             aria-label="note content"
                             aria-required="true"
                             aria-describedby="error-box"
