@@ -186,7 +186,7 @@ class TimerComponent extends Component {
                                     name="session-name"
                                     className="session-name"
                                     onChange={this.handleSessionName}
-                                    defaultValue={'enter session name'}
+                                    placeholder={'enter session name'}
                                     aria-label="session name"
                                     aria-required="true"
                                     aria-describedby="error-box"
@@ -197,7 +197,7 @@ class TimerComponent extends Component {
                                     name="session-description"
                                     className="session-description"
                                     onChange={this.handleSessionContent}
-                                    defaultValue={'enter session description'}
+                                    placeholder={'enter session description'}
                                     aria-label="session description"
                                     aria-required="true"
                                     aria-describedby="error-box"

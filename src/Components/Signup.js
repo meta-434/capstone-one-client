@@ -105,7 +105,7 @@ class Signup extends Component {
                             name="signup-username"
                             className="signup-username"
                             onChange={this.handleUsername}
-                            defaultValue={'enter username'}
+                            placeholder={'enter username'}
                             aria-label="username"
                             aria-required="true"
                             aria-describedby="error-box"
@@ -117,7 +117,7 @@ class Signup extends Component {
                             name="signup-password"
                             className="signup-password"
                             onChange={this.handlePassword}
-                            defaultValue={'enter password'}
+                            placeholder={'enter password'}
                             aria-label="password"
                             aria-required="true"
                             aria-describedby="error-box"
