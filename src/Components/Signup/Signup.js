@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Signup.css'
 import PomodoroContext from "../../PomodoroContext";
+import ErrorDisplay from "../ErrorDisplay/ErrorDisplay";
 
 class Signup extends Component {
 
@@ -20,14 +21,14 @@ class Signup extends Component {
     componentDidMount() {
         this.validateUsername(this.state.username);
         this.validatePassword(this.state.password);
+        console.log('props', this.props);
     }
 
     handlePatchSubmit = (e) => {
         e.preventDefault();
         this.context.handlePostSignup(this.state);
-        if (this.context.authToken || sessionStorage[`access-token`]) {
-            this.props.history.push('/login');
-        }
+        this.setState({error: this.context.error});
+        this.props.history.push('/login');
     }
 
     handleUsername = (e) => {
@@ -90,55 +91,61 @@ class Signup extends Component {
 
     render() {
         return(
-            <main className="signup-form">
-                <section>
-                    <header>
-                        signup to save your sessions and notes!
-                    </header>
-                </section>
-                <section>
-                    <form
-                        className='react-form'
-                        onSubmit={this.handlePatchSubmit}>
-                        <label htmlFor='signup-username'>username: </label>
-                        <input
-                            type="text"
-                            id="signup-username"
-                            name="signup-username"
-                            className="signup-username"
-                            onChange={this.handleUsername}
-                            defaultValue={'enter username'}
-                            aria-label="username"
-                            aria-required="true"
-                            aria-describedby="error-box"
-                        />
-                        <label htmlFor='signup-password'>password: </label>
-                        <input
-                            type="text"
-                            id="signup-password"
-                            name="signup-password"
-                            className="signup-password"
-                            onChange={this.handlePassword}
-                            defaultValue={'enter password'}
-                            aria-label="password"
-                            aria-required="true"
-                            aria-describedby="error-box"
-                        />
-                        <button
-                            className="submit-button"
-                            type="submit"
-                            disabled={!this.state.usernameValid || !this.state.passwordValid }>
-                            Submit
-                        </button>
-                        <section className="error-box" id="error-box" aria-live="assertive">
-                            {this.state.usernameValidation}
-                            <br />
-                            {this.state.passwordValidation}
-                        </section>
-                    </form>
-                </section>
-            </main>
-
+            <>
+                {
+                (!!this.context.error)
+                    ? <ErrorDisplay />
+                    : ''
+                }
+                <main className="signup-form">
+                    <section>
+                        <header>
+                            signup to save your sessions and notes!
+                        </header>
+                    </section>
+                    <section>
+                        <form
+                            className='react-form'
+                            onSubmit={this.handlePatchSubmit}>
+                            <label htmlFor='signup-username'>username: </label>
+                            <input
+                                type="text"
+                                id="signup-username"
+                                name="signup-username"
+                                className="signup-username"
+                                onChange={this.handleUsername}
+                                placeholder={'enter username'}
+                                aria-label="username"
+                                aria-required="true"
+                                aria-describedby="error-box"
+                            />
+                            <label htmlFor='signup-password'>password: </label>
+                            <input
+                                type="text"
+                                id="signup-password"
+                                name="signup-password"
+                                className="signup-password"
+                                onChange={this.handlePassword}
+                                placeholder={'enter password'}
+                                aria-label="password"
+                                aria-required="true"
+                                aria-describedby="error-box"
+                            />
+                            <button
+                                className="submit-button"
+                                type="submit"
+                                disabled={!this.state.usernameValid || !this.state.passwordValid }>
+                                Submit
+                            </button>
+                            <section className="error-box" id="error-box" aria-live="assertive">
+                                {this.state.usernameValidation}
+                                <br />
+                                {this.state.passwordValidation}
+                            </section>
+                        </form>
+                    </section>
+                </main>
+            </>
         );
     }
 }

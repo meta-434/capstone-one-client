@@ -16,11 +16,16 @@ class App extends Component {
     notes: [],
     authToken: undefined,
     error: undefined,
+    username: undefined,
   }
 
   logOut = () => {
     this.setState({authToken: undefined});
     sessionStorage.clear();
+  }
+
+  clearError = () => {
+      this.setState({error: undefined});
   }
 
   handlePostSignup = ({ username, password }) => {
@@ -36,18 +41,28 @@ class App extends Component {
     })
         .then(result => {
             let json = result.json() // There's always a response body
-            if (result.status >= 200 && result.status < 300) { return json }
-            return json.then(Promise.reject.bind(Promise))
-
+            if (!(result.status >= 200 && result.status < 300)) {
+                return json.then(Promise.reject.bind(Promise))
+            }
+            return json;
         })
-        .then(result =>  result.json())
+        .then(resJson => {
+            if (!!resJson.ok) {
+                this.setState({ authToken: resJson.token, username })
+                sessionStorage.setItem('access-token', this.state.authToken);
+                sessionStorage.setItem('username', username);
+            }
+            else {
+                throw new Error(' error in authenticating. check username and password. ');
+            }
+        })
         .catch(error => {
-          this.setState({error});
+            console.error(error);
+            this.setState({error});
         });
   };
 
-    handlePostAuthenticate = ({ username, password }) => {
-        console.log('for login');
+  handlePostAuthenticate = ({ username, password }) => {
         fetch(process.env.REACT_APP_SERVER_URL + `/authenticate`, {
             method: 'post',
             headers: {
@@ -220,6 +235,7 @@ class App extends Component {
       handleGetSessions: this.handleGetSessions,
       handleDeleteSession: this.handleDeleteSession,
       handlePostSession: this.handlePostSession,
+      clearError: this.clearError,
     }
     return (
         <PomodoroContext.Provider value={(context)}>

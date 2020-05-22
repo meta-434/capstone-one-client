@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PomodoroContext from "../../PomodoroContext";
 import './Sessions.css';
+import ErrorDisplay from "../ErrorDisplay/ErrorDisplay";
 
 class Sessions extends Component {
 
@@ -13,6 +14,11 @@ class Sessions extends Component {
     render() {
         return(
             <>
+                {
+                    (!!this.context.error)
+                        ? <ErrorDisplay />
+                        : ''
+                }
                 <section>
                     <header>My Saved Sessions</header>
                     <h3>review past work sessions</h3>

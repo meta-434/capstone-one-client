@@ -15,16 +15,17 @@ class Login extends Component {
             validation: '',
             usernameValid: false,
             passwordValid: false,
+            error: undefined,
         }
     }
 
     componentDidMount() {
         this.validateUsername(this.state.username);
         this.validatePassword(this.state.password);
+        this.context.clearError();
     }
 
     handlePostSubmit = (e) => {
-        console.log('login being used?')
         e.preventDefault();
         this.context.handlePostAuthenticate(this.state);
         this.props.history.push('/timer');

@@ -72,3 +72,11 @@ button {
   border: 2px inherit solid;
   border-radius: 3px;
 }
+
+input::placeholder {
+  color: #d08770;
+}
+
+.error {
+  color: #bf616a;
+}

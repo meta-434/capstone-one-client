@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PomodoroContext from "../../PomodoroContext";
 import './Notes.css'
+import ErrorDisplay from "../ErrorDisplay/ErrorDisplay";
 
 class Notes extends Component {
 
@@ -96,6 +97,11 @@ class Notes extends Component {
     render() {
         return(
             <>
+                {
+                    (!!this.context.error)
+                        ? <ErrorDisplay />
+                        : ''
+                }
                 <section>
                     <header>My Notes</header>
                 </section>
