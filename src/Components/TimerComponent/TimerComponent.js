@@ -42,10 +42,10 @@ class TimerComponent extends Component {
             }
         ]);
 
-        this.context.handleGetSessions();
-        this.context.handleGetNotes();
         this.validateName(this.state.name);
         this.validateContent(this.state.description);
+        this.context.handleGetSessions();
+        this.context.handleGetNotes();
     }
 
     handlePostSubmit = (e) => {

@@ -17,6 +17,19 @@ class App extends Component {
     authToken: undefined,
     error: undefined,
     username: undefined,
+    password: undefined
+  }
+
+  componentDidMount() {
+      const {username, password} = this.state;
+      this.handleGetErrors();
+      if (!!username && !!password) {
+          this.handlePostAuthenticate({username, password});
+          if (this.state.authToken || sessionStorage['access-token']) {
+              console.log('successful login', username, password);
+          }
+      }
+      this.clearError();
   }
 
   logOut = () => {
@@ -26,6 +39,11 @@ class App extends Component {
 
   clearError = () => {
       this.setState({error: undefined});
+  }
+
+  handleGetErrors = () => {
+      this.setState({error: this.context.error});
+      return this.state.error;
   }
 
   handlePostSignup = ({ username, password }) => {
@@ -47,14 +65,16 @@ class App extends Component {
             return json;
         })
         .then(resJson => {
-            if (!!resJson.ok) {
-                this.setState({ authToken: resJson.token, username })
-                sessionStorage.setItem('access-token', this.state.authToken);
+            console.log('resJson', resJson);
+            if (!!resJson.message) {
+                this.setState({ authToken: resJson.token, username, password })
+                sessionStorage.setItem('access-token', resJson.token);
                 sessionStorage.setItem('username', username);
             }
             else {
-                throw new Error(' error in authenticating. check username and password. ');
+                throw new Error(' user already exists ');
             }
+            return resJson;
         })
         .catch(error => {
             console.error(error);
@@ -236,6 +256,7 @@ class App extends Component {
       handleDeleteSession: this.handleDeleteSession,
       handlePostSession: this.handlePostSession,
       clearError: this.clearError,
+      handleGetErrors: this.handleGetErrors,
     }
     return (
         <PomodoroContext.Provider value={(context)}>

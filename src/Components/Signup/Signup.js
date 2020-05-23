@@ -15,20 +15,21 @@ class Signup extends Component {
             validation: '',
             usernameValid: false,
             passwordValid: false,
+            error: undefined,
         }
     }
 
     componentDidMount() {
         this.validateUsername(this.state.username);
         this.validatePassword(this.state.password);
-        console.log('props', this.props);
     }
 
     handlePatchSubmit = (e) => {
         e.preventDefault();
         this.context.handlePostSignup(this.state);
-        this.setState({error: this.context.error});
-        this.props.history.push('/login');
+        const err = this.context.handleGetErrors();
+        this.setState({error: err})
+        console.log(err);
     }
 
     handleUsername = (e) => {
