@@ -19,7 +19,7 @@ class Main extends Component {
                     </header>
                     <p>The Pomodoro Technique is a time-management technique that encourages productivity and focus</p>
                     <br />
-                    <img src={timer} alt={'image of timer'} />
+                    <img src={timer} alt={'timer'} />
                     <p className='caption'>Timer Page</p>
                     <p>By working on a specific task in 25 minute increments, with 5 minute breaks, your work sessions never lack in direction. Every 4 work sessions, take a longer break. 20 minutes, maybe 30. This time will help you rest before you next round. </p>
                 </section>
@@ -27,7 +27,7 @@ class Main extends Component {
                     <header>
                         <h3>Track your Pomodoro sessions</h3>
                     </header>
-                    <img src={sessions} alt={'image of sessions page'} />
+                    <img src={sessions} alt={'sessions page'} />
                     <p className='caption'>Session Page</p>
                     <p>By reviewing tracking your Pomodoro sessions, you increase your accountability - you want to be able to put something down as completed. By referring to your past Pomodoro sessions, you can see your progress as you work through your sessions. </p>
                 </section>
@@ -35,7 +35,7 @@ class Main extends Component {
                     <header>
                         <h3>Keep Useful Notes</h3>
                     </header>
-                    <img src={notes} alt={'image of notes page'} />
+                    <img src={notes} alt={'notes page'} />
                     <p className='caption'>Note Page</p>
                     <p>Keep formulae, phone numbers, or just encouraging thoughts - your most recent note will be displayed on the timer page for reference during work sessions.</p>
                 </section>
