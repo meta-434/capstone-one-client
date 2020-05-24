@@ -25,7 +25,8 @@ class Login extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (!!this.context.authToken || sessionStorage[`access-token`]) {
+        console.log(this.context);
+        if (!!this.context.authToken) {
             this.context.clearError();
             this.props.history.push('/timer');
         }

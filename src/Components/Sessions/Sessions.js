@@ -11,6 +11,10 @@ class Sessions extends Component {
         this.context.handleDeleteSession(id);
     }
 
+    componentDidMount() {
+        this.context.handleGetSessions()
+    }
+
     render() {
         return(
             <>

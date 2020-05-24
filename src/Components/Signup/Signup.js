@@ -41,12 +41,23 @@ class Signup extends Component {
 
     handleUsername = (e) => {
         let usernameInput = e.target.value;
-        this.setState({ username: usernameInput }, () => this.validateUsername(usernameInput));
+        this.setState(
+            { username: usernameInput },
+            () => this.validateUsername(usernameInput));
     }
 
     handlePassword = (e) => {
         let passwordInput = e.target.value;
-        this.setState({ password: passwordInput }, () => this.validatePassword(passwordInput));
+        this.setState(
+            { password: passwordInput },
+            () => this.validatePassword(passwordInput));
+    }
+
+    handleConfirmPassword = (e) => {
+        let confirmPasswordInput = e.target.value;
+        this.setState(
+            { confirmPassword: confirmPasswordInput },
+            () => this.validateConfirmPassword(confirmPasswordInput))
     }
 
     validateUsername = (username) => {
@@ -64,7 +75,7 @@ class Signup extends Component {
         this.setState({
             usernameValid: !hasError,
             usernameValidation: validationMessages,
-        }, () => this.usernameValid(username))
+        }, () => this.usernameValid(username));
     }
 
     validatePassword = (password) => {
@@ -82,7 +93,29 @@ class Signup extends Component {
         this.setState({
             passwordValid: !hasError,
             passwordValidation: validationMessages,
-        }, () => this.passwordValid(password))
+        }, () => this.passwordValid(password));
+    }
+
+    validateConfirmPassword = (confirmPassword) => {
+        let validationMessages;
+        let hasError = false;
+
+        if (!confirmPassword) {
+            hasError = true;
+            validationMessages = ' confirm password must not be blank '
+        }
+        if (confirmPassword && confirmPassword !== this.state.password) {
+            hasError = true;
+            validationMessages = ' confirm password and password do not match '
+        }
+        else {
+            validationMessages = ''
+        }
+
+        this.setState({
+            confirmPasswordValid: !hasError,
+            confirmPasswordValidation: validationMessages,
+        }, () => this.confirmPasswordValid(confirmPassword));
     }
 
     usernameValid = (username) => {
@@ -94,6 +127,12 @@ class Signup extends Component {
     passwordValid = (password) => {
         if (this.state.password) {
             this.setState({password})
+        }
+    }
+
+    confirmPasswordValid = (confirmPassword) => {
+        if (this.state.confirmPassword) {
+            this.setState({confirmPassword})
         }
     }
 
@@ -140,16 +179,35 @@ class Signup extends Component {
                                 aria-required="true"
                                 aria-describedby="error-box"
                             />
+                            <label htmlFor='confirm-signup-password'>confirm password: </label>
+                            <input
+                                type="text"
+                                id="confirm-signup-password"
+                                name="confirm-signup-password"
+                                className="confirm-signup-password"
+                                onChange={this.handleConfirmPassword}
+                                placeholder={'confirm password'}
+                                aria-label="confirm password"
+                                aria-required="true"
+                                aria-describedby="error-box"
+                            />
                             <button
                                 className="submit-button"
                                 type="submit"
-                                disabled={!this.state.usernameValid || !this.state.passwordValid }>
+                                disabled={
+                                    !this.state.usernameValid||
+                                    !this.state.passwordValid ||
+                                    !this.state.confirmPasswordValid
+                                }
+                            >
                                 Submit
                             </button>
                             <section className="error-box" id="error-box" aria-live="assertive">
                                 {this.state.usernameValidation}
                                 <br />
                                 {this.state.passwordValidation}
+                                <br />
+                                {this.state.confirmPasswordValidation}
                             </section>
                         </form>
                     </section>

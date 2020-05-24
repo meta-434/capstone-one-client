@@ -23,12 +23,12 @@ class App extends Component {
   componentDidMount() {
       const {username, password} = this.state;
       this.handleGetErrors();
-      if (!!username && !!password) {
-          this.handlePostAuthenticate({username, password});
-          if (this.state.authToken || sessionStorage['access-token']) {
-              console.log('successful login', username, password);
-          }
-      }
+      // if (!!username && !!password) {
+      //     this.handlePostAuthenticate({username, password});
+      //     if (this.state.authToken || sessionStorage['access-token']) {
+      //         console.log('successful login', username, password);
+      //     }
+      // }
   }
 
   logOut = () => {
