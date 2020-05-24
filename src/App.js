@@ -29,7 +29,6 @@ class App extends Component {
               console.log('successful login', username, password);
           }
       }
-      this.clearError();
   }
 
   logOut = () => {
@@ -58,16 +57,12 @@ class App extends Component {
       })
     })
         .then(result => {
-            let json = result.json() // There's always a response body
-            if (!(result.status >= 200 && result.status < 300)) {
-                return json.then(Promise.reject.bind(Promise))
-            }
-            return json;
+            return result.json();
         })
         .then(resJson => {
             console.log('resJson', resJson);
+            this.setState({error: resJson})
             if (!!resJson.message) {
-                this.setState({ authToken: resJson.token, username, password })
                 sessionStorage.setItem('access-token', resJson.token);
                 sessionStorage.setItem('username', username);
             }
@@ -78,7 +73,6 @@ class App extends Component {
         })
         .catch(error => {
             console.error(error);
-            this.setState({error});
         });
   };
 
@@ -94,13 +88,10 @@ class App extends Component {
             })
         })
             .then(result => {
-                let json = result.json() // There's always a response body
-                if (!(result.status >= 200 && result.status < 300)) {
-                    return json.then(Promise.reject.bind(Promise))
-                }
-                return json;
+                return result.json();
             })
             .then(resJson => {
+                this.setState({error: resJson})
                 if (!!resJson.token) {
                     this.setState({ authToken: resJson.token, username })
                     sessionStorage.setItem('access-token', this.state.authToken);
@@ -114,7 +105,6 @@ class App extends Component {
             })
             .catch(error => {
                 console.error(error);
-                this.setState({error});
             });
     };
 
@@ -219,7 +209,6 @@ class App extends Component {
         )
         .catch(error => {
           console.error(error);
-          this.setState({error});
         });
   }
 
@@ -234,7 +223,6 @@ class App extends Component {
         .then(res => this.handleGetNotes())
         .catch(error => {
           console.error(error);
-          this.setState({error});
         });
   }
 

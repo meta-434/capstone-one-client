@@ -22,13 +22,18 @@ class Login extends Component {
     componentDidMount() {
         this.validateUsername(this.state.username);
         this.validatePassword(this.state.password);
-        this.context.clearError();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (!!this.context.authToken || sessionStorage[`access-token`]) {
+            this.context.clearError();
+            this.props.history.push('/timer');
+        }
     }
 
     handlePostSubmit = (e) => {
         e.preventDefault();
         this.context.handlePostAuthenticate(this.state);
-        this.props.history.push('/timer');
     }
 
     handleUsername = (e) => {

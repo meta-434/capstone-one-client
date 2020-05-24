@@ -24,12 +24,19 @@ class Signup extends Component {
         this.validatePassword(this.state.password);
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (!!this.context && !!this.context.error && this.context.error.message) {
+            console.log('this will redirect')
+            this.props.history.push('/login')
+        } else {
+            console.log('valid message not yet received.')
+        }
+    }
+
     handlePatchSubmit = (e) => {
         e.preventDefault();
         this.context.handlePostSignup(this.state);
-        const err = this.context.handleGetErrors();
-        this.setState({error: err})
-        console.log(err);
+
     }
 
     handleUsername = (e) => {
@@ -91,12 +98,13 @@ class Signup extends Component {
     }
 
     render() {
+        const { error } = this.context;
         return(
             <>
                 {
-                (!!this.context.error)
+                (!!error)
                     ? <ErrorDisplay />
-                    : ''
+                    : ``
                 }
                 <main className="signup-form">
                     <section>

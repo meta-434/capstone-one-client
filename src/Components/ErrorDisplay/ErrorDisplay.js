@@ -8,7 +8,7 @@ export default class errorDisplay extends Component {
     render() {
         const {error} = this.context;
         return (
-            (!!error) ? (<p className={"error"}>error: {(error) ? (error.error) : ('')}</p>) : ('')
+            (!!error) ? (<p className={"error"}>status: {(error) ? (error.error || error.message) : ('')}</p>) : ('')
         );
     }
 }
