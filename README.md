@@ -28,6 +28,8 @@ username: `test-user`
 <br />
 password: `test-password`
 
+if nothing appears to happen when trying to use the app, wait 30-45 seconds for the hosted database to spin up.
+
 # Tech
 
 + React
