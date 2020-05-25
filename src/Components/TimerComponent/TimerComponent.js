@@ -123,7 +123,7 @@ class TimerComponent extends Component {
 
     start5 = () => {
         const { start, reset, setTime } = this.props.timer;
-        setTime(3000);
+        setTime(300000);
         reset();
         start();
     }
