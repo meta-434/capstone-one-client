@@ -126,7 +126,7 @@ class Login extends Component {
                             />
                             <label htmlFor='login-password'>password: </label>
                             <input
-                                type="text"
+                                type="password"
                                 id="login-password"
                                 name="login-password"
                                 className="login-password"

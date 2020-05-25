@@ -166,7 +166,7 @@ class Signup extends Component {
                             />
                             <label htmlFor='signup-password'>password: </label>
                             <input
-                                type="text"
+                                type="password"
                                 id="signup-password"
                                 name="signup-password"
                                 className="signup-password"
@@ -178,7 +178,7 @@ class Signup extends Component {
                             />
                             <label htmlFor='confirm-signup-password'>confirm password: </label>
                             <input
-                                type="text"
+                                type="password"
                                 id="confirm-signup-password"
                                 name="confirm-signup-password"
                                 className="confirm-signup-password"
