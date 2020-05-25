@@ -1,112 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the Notes UI as expected 1`] = `
-<div
-  className="app"
->
-  <nav>
-    <h1
-      className="nav-h1"
-    >
-      <a
-        href="/"
-        onClick={[Function]}
-      >
-        Pomodoro Timer
-      </a>
-    </h1>
-    <button>
-      <a
-        href="/timer"
-        onClick={[Function]}
-      >
-        Timer
-      </a>
-    </button>
-    <button>
-      <a
-        href="/login"
-        onClick={[Function]}
-      >
-        Log In
-      </a>
-    </button>
-    <button>
-      <a
-        href="/signup"
-        onClick={[Function]}
-      >
-        Sign Up
-      </a>
-    </button>
-  </nav>
-  <main
-    className="app-content"
+Array [
+  "",
+  <section>
+    <header>
+      My Notes
+    </header>
+  </section>,
+  <section
+    className="react-form-section"
   >
-    <section>
-      <p>
-        
-      </p>
-      <header>
-        <h3>
-          What is the Pomodoro Technique ?
-        </h3>
-      </header>
-      <p>
-        The Pomodoro Technique is a time-management technique that encourages productivity and focus
-      </p>
+    <form
+      className="react-form"
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="note-name"
+      >
+        note name: 
+      </label>
+      <input
+        aria-describedby="error-box"
+        aria-label="note name"
+        aria-required="true"
+        className="note-name"
+        id="note-name"
+        name="note-name"
+        onChange={[Function]}
+        placeholder="enter note name"
+        type="text"
+      />
+      <label
+        htmlFor="note-content"
+      >
+        note content: 
+      </label>
+      <textarea
+        aria-describedby="error-box"
+        aria-label="note content"
+        aria-required="true"
+        className="note-content"
+        id="note-content"
+        name="note-content"
+        onChange={[Function]}
+        placeholder="enter note content"
+      />
+      <button
+        className="submit-button"
+        disabled={true}
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+    <section
+      aria-live="assertive"
+      className="error-box"
+      id="error-box"
+    >
+       name cannot be blank. 
       <br />
-      <img
-        alt="timer"
-        src="timer.png"
-      />
-      <p
-        className="caption"
-      >
-        Timer Page
-      </p>
-      <p>
-        By working on a specific task in 25 minute increments, with 5 minute breaks, your work sessions never lack in direction. Every 4 work sessions, take a longer break. 20 minutes, maybe 30. This time will help you rest before you next round. 
-      </p>
+       content cannot be blank. 
     </section>
-    <section>
-      <header>
-        <h3>
-          Track your Pomodoro sessions
-        </h3>
-      </header>
-      <img
-        alt="sessions page"
-        src="sessions.png"
-      />
-      <p
-        className="caption"
+  </section>,
+  <section
+    className="notes-display"
+  >
+    <div
+      className="notes-display"
+    >
+      <h3>
+        jest note
+      </h3>
+      <h4>
+        ↳ 
+        jest test note
+      </h4>
+      <button
+        onClick={[Function]}
       >
-        Session Page
-      </p>
-      <p>
-        By reviewing tracking your Pomodoro sessions, you increase your accountability - you want to be able to put something down as completed. By referring to your past Pomodoro sessions, you can see your progress as you work through your sessions. 
-      </p>
-    </section>
-    <section>
-      <header>
-        <h3>
-          Keep Useful Notes
-        </h3>
-      </header>
-      <img
-        alt="notes page"
-        src="notes.png"
-      />
-      <p
-        className="caption"
-      >
-        Note Page
-      </p>
-      <p>
-        Keep formulae, phone numbers, or just encouraging thoughts - your most recent note will be displayed on the timer page for reference during work sessions.
-      </p>
-    </section>
-  </main>
-</div>
+        Delete
+      </button>
+    </div>
+  </section>,
+]
 `;

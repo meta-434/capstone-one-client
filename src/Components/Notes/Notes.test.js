@@ -10,20 +10,54 @@ import PomodoroContext from "../../PomodoroContext";
 test('renders Notes component without crashing', () => {
 
     const div = document.createElement('div');
-    ReactDOM.render(<BrowserRouter><App><Notes /></App></BrowserRouter>, div);
+    ReactDOM.render(
+            <PomodoroContext.Provider value={{
+                notes: [
+                    {
+                        note_id: 1,
+                        note_name: 'jest note',
+                        note_content: 'jest test note',
+                        note_owner: 30,
+                    },
+                ],
+                handleGetNotes: () => {
+                    return {
+                        note_name: 'jest note',
+                        note_content: 'jest note contents',
+                        note_owner: 1
+                    };
+                }
+            }}>
+                <Notes />
+            </PomodoroContext.Provider>
+        , div);
     ReactDOM.unmountComponentAtNode(div);
 });
 
 it('renders the Notes UI as expected', () => {
     const tree = renderer
         .create(
-            <BrowserRouter>
-                <App>
-                    <PomodoroContext>
-                        <Notes />
-                    </PomodoroContext>
-                </App>
-            </BrowserRouter>
+
+            <PomodoroContext.Provider value={{
+                notes: [
+                    {
+                        note_id: 1,
+                        note_name: 'jest note',
+                        note_content: 'jest test note',
+                        note_owner: 30,
+                    },
+                ],
+                handleGetNotes: () => {
+                    return {
+                        note_name: 'jest note',
+                        note_content: 'jest note contents',
+                        note_owner: 1
+                    };
+                }
+            }}>
+                <Notes />
+            </PomodoroContext.Provider>
+
         )
         .toJSON();
 
