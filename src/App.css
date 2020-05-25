@@ -17,6 +17,10 @@
   background-size: cover;
 }
 
+* > #timer-component {
+  font-family: monospace;
+}
+
 body {
   font-size: 20px;
   color: #444;

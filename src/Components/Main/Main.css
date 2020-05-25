@@ -13,3 +13,7 @@ img {
     border: 2px #EBCB8B solid;
     border-radius: 3px;
 }
+
+.app-content {
+    margin-top: 150px;
+}

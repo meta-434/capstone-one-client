@@ -5,6 +5,7 @@ header {
 }
 
 #timer-component {
+    font-family: monospace;
     font-size: 100px;
     border: 3px #8fbcbb solid;
     border-radius: 5px;
@@ -110,4 +111,66 @@ form > label {
     width: 300px;
     margin-left: calc(50% - 150px);
     margin-right: auto;
+}
+
+@media only screen and (max-width: 975px) {
+    #timer-component {
+        font-size: 50px;
+    }
+
+    .form-and-error {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: calc(100% - 40px);
+    }
+
+    form {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: calc(100% - 20px);
+    }
+
+    form > button {
+        text-align: center;
+    }
+
+    .timer-note {
+        margin-left: 10px;
+        margin-right: 10px;
+        min-width: calc(100% - 20px);
+    }
+}
+@media only screen and (max-width: 575px) {
+    #timer-component {
+        font-size: 20px;
+    }
+
+    .form-and-error {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: calc(100% - 40px);
+    }
+
+    form {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: calc(100% - 20px);
+    }
+
+    form > button {
+        text-align: center;
+    }
+
+    .timer-note {
+        margin-left: 10px;
+        margin-right: 10px;
+        min-width: calc(100% - 20px);
+    }
+    
+    .react-form > label {
+        max-width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 18px;
+    }
 }

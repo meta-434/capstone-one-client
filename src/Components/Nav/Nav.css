@@ -16,6 +16,15 @@ nav {
     text-decoration: none;
 }
 
+nav > button > a, nav > button {
+    width: 110px;
+    text-decoration: none;
+    background-color: #8fbcbb;
+    color: #D8DEE9;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 nav > p {
     max-width: 450px;
     min-width: 250px;
@@ -33,11 +42,95 @@ nav > button {
     max-width: 150px;
 }
 
-nav > button > a, nav > button {
-    width: 110px;
-    text-decoration: none;
-    background-color: #8fbcbb;
-    color: #D8DEE9;
-    font-size: 18px;
-    font-weight: bold;
+@media only screen and (max-width: 510px) {
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .nav-h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-h1 > a {
+        font-size: 20px;
+    }
+
+    nav > button > a {
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    nav > p {
+        width: 100%;
+        margin: auto;
+        font-size: 18px;
+    }
+
+    nav > button {;
+        border: 1px #8fbcbb solid;
+        margin-right: 5px;
+        min-height: 30px;
+        max-height: 40px;
+    }
+
+    nav > button > a {
+        font-size: 18px;
+    }
+
+    .timer-header {
+        margin-top: 150px;
+    }
 }
+
+@media only screen and (max-width: 510px) {
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        min-height: 200px;
+    }
+
+    .nav-h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-h1 > a {
+        font-size: 20px;
+    }
+
+    nav > button > a {
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    nav > p {
+        width: 100%;
+        margin: auto;
+        font-size: 18px;
+    }
+
+    nav > button {;
+        border: 1px #8fbcbb solid;
+        margin-right: 5px;
+        min-height: 30px;
+        max-height: 40px;
+    }
+
+    nav > button > a {
+        font-size: 18px;
+    }
+
+    .timer-header {
+        margin-top: 150px;
+    }
+}
+
+
+
+
