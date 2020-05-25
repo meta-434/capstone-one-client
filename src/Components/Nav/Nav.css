@@ -46,13 +46,8 @@ nav > button {
     font-size: 15px;
 }
 
-@media only screen and (max-width: 510px) {
-
-    nav {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
+@media only screen and (max-width: 775px) {
+    
 
     .nav-h1 {
         width: 100%;
@@ -118,9 +113,10 @@ nav > button {
     }
 
     nav > p {
-        width: 100%;
+        min-width: 100px;
+        max-width: 100px;
         margin: auto;
-        font-size: 18px;
+        font-size: 15px;
     }
 
     nav > button {;
