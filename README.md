@@ -33,9 +33,9 @@ if nothing appears to happen when trying to use the app, wait 30-45 seconds for 
 # Tech
 
 + React
-<br />
+
 + React-Router-Dom
-<br />
+
 + Context API
 
 # Screenshots
