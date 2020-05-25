@@ -26,10 +26,7 @@ class Signup extends Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (!!this.context && !!this.context.error && this.context.error.message) {
-            console.log('this will redirect')
             this.props.history.push('/login')
-        } else {
-            console.log('valid message not yet received.')
         }
     }
 

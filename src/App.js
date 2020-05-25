@@ -21,14 +21,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-      const {username, password} = this.state;
       this.handleGetErrors();
-      // if (!!username && !!password) {
-      //     this.handlePostAuthenticate({username, password});
-      //     if (this.state.authToken || sessionStorage['access-token']) {
-      //         console.log('successful login', username, password);
-      //     }
-      // }
   }
 
   logOut = () => {
@@ -60,7 +53,6 @@ class App extends Component {
             return result.json();
         })
         .then(resJson => {
-            console.log('resJson', resJson);
             this.setState({error: resJson})
             if (!!resJson.message) {
                 sessionStorage.setItem('access-token', resJson.token);

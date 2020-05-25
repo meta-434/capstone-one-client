@@ -166,7 +166,7 @@ form > label {
         margin-right: 10px;
         min-width: calc(100% - 20px);
     }
-    
+
     .react-form > label {
         max-width: calc(100% - 20px);
         margin-left: 10px;
