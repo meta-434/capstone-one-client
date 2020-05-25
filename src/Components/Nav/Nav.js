@@ -21,7 +21,7 @@ class Nav extends Component {
                     <button><Link to='/timer'>Timer</Link></button>
                     <button><Link to='/sessions/'>Sessions</Link></button>
                     <button><Link to='/notes/'>Notes</Link></button>
-                    <button onClick={this.logOut}>Log Out</button>
+                    <button className="logout" onClick={this.logOut}>Log Out</button>
                 </>
                 : <>
                     <button><Link to='/timer'>Timer</Link></button>

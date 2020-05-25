@@ -152,9 +152,9 @@ class Notes extends Component {
                                 return notes.map((note, index) => {
                                     return (
                                         <div className="notes-display" key={index} id={note.id}>
-                                            <h3>{note.note_name}</h3>
-                                            <h4>↳ {note.note_content}</h4>
-                                            <button onClick={() => this.handleDelete(note.id)}>Delete</button>
+                                            <h3 data-testid="name">{note.note_name}</h3>
+                                            <h4 data-testid="content">↳ {note.note_content}</h4>
+                                            <button data-testid="delbutton" onClick={() => this.handleDelete(note.id)}>Delete</button>
                                         </div>
                                     );
                                 }).reverse();

@@ -1,5 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`adds notes and displays them after submission 1`] = `
+Array [
+  "",
+  <section>
+    <header>
+      My Notes
+    </header>
+  </section>,
+  <section
+    className="react-form-section"
+  >
+    <form
+      className="react-form"
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="note-name"
+      >
+        note name: 
+      </label>
+      <input
+        aria-describedby="error-box"
+        aria-label="note name"
+        aria-required="true"
+        className="note-name"
+        id="note-name"
+        name="note-name"
+        onChange={[Function]}
+        placeholder="enter note name"
+        type="text"
+      />
+      <label
+        htmlFor="note-content"
+      >
+        note content: 
+      </label>
+      <textarea
+        aria-describedby="error-box"
+        aria-label="note content"
+        aria-required="true"
+        className="note-content"
+        id="note-content"
+        name="note-content"
+        onChange={[Function]}
+        placeholder="enter note content"
+      />
+      <button
+        className="submit-button"
+        disabled={true}
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+    <section
+      aria-live="assertive"
+      className="error-box"
+      id="error-box"
+    >
+       name cannot be blank. 
+      <br />
+       content cannot be blank. 
+    </section>
+  </section>,
+  <section
+    className="notes-display"
+  >
+    <div
+      className="notes-display"
+    >
+      <h3
+        data-testid="name"
+      >
+        jest note
+      </h3>
+      <h4
+        data-testid="content"
+      >
+        ↳ 
+        jest test note
+      </h4>
+      <button
+        data-testid="delbutton"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </div>
+  </section>,
+]
+`;
+
 exports[`renders the Notes UI as expected 1`] = `
 Array [
   "",
@@ -70,14 +162,19 @@ Array [
     <div
       className="notes-display"
     >
-      <h3>
+      <h3
+        data-testid="name"
+      >
         jest note
       </h3>
-      <h4>
+      <h4
+        data-testid="content"
+      >
         ↳ 
         jest test note
       </h4>
       <button
+        data-testid="delbutton"
         onClick={[Function]}
       >
         Delete
