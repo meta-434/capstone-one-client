@@ -10,20 +10,55 @@ import PomodoroContext from "../../PomodoroContext";
 test('renders Sessions component without crashing', () => {
 
     const div = document.createElement('div');
-    ReactDOM.render(<BrowserRouter><App><Sessions /></App></BrowserRouter>, div);
+    ReactDOM.render(
+        <PomodoroContext.Provider value={{
+            sessions: [
+                {
+                    session_id: 1,
+                    session_name: 'jest session',
+                    session_content: 'jest test session',
+                    session_owner: 30,
+                },
+            ],
+            handleGetSessions: () => {
+                return {
+                    session_name: 'jest session',
+                    session_content: 'jest session contents',
+                    session_owner: 1
+                };
+            }
+        }}>
+            <Sessions />
+        </PomodoroContext.Provider>
+        , div);
     ReactDOM.unmountComponentAtNode(div);
 });
 
 it('renders the Sessions UI as expected', () => {
     const tree = renderer
         .create(
-            <BrowserRouter>
-                <App>
-                    <PomodoroContext>
-                        <Sessions />
-                    </PomodoroContext>
-                </App>
-            </BrowserRouter>
+            <PomodoroContext.Provider value={{
+                sessions: [
+                    {
+                        session_id: 1,
+                        session_name: 'jest session',
+                        session_description: 'jest test session',
+                        session_end: new Date().getDate(),
+                        session_owner: 30,
+                    },
+                ],
+                handleGetSessions: () => {
+                    return {
+                        session_name: 'jest session',
+                        session_description: 'jest session description',
+                        session_end: new Date().getDate(),
+                        session_owner: 1
+                    };
+                }
+            }}>
+                <Sessions />
+            </PomodoroContext.Provider>
+
         )
         .toJSON();
 

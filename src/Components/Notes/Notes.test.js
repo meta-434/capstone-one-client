@@ -37,7 +37,6 @@ test('renders Notes component without crashing', () => {
 it('renders the Notes UI as expected', () => {
     const tree = renderer
         .create(
-
             <PomodoroContext.Provider value={{
                 notes: [
                     {
