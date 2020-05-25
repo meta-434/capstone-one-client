@@ -42,6 +42,10 @@ nav > button {
     max-width: 150px;
 }
 
+.logout {
+    font-size: 15px;
+}
+
 @media only screen and (max-width: 510px) {
 
     nav {
@@ -83,6 +87,10 @@ nav > button {
 
     .timer-header {
         margin-top: 150px;
+    }
+
+    .logout {
+        font-size: 11px;
     }
 }
 
@@ -129,6 +137,11 @@ nav > button {
     .timer-header {
         margin-top: 150px;
     }
+
+    .logout {
+        font-size: 10px;
+    }
+
 }
 
 
