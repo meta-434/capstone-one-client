@@ -15,30 +15,34 @@ exports[`renders the TimerComponent UI as expected 1`] = `
         Pomodoro Timer
       </a>
     </h1>
-    <button>
-      <a
-        href="/timer"
-        onClick={[Function]}
-      >
-        Timer
-      </a>
-    </button>
-    <button>
-      <a
-        href="/login"
-        onClick={[Function]}
-      >
-        Log In
-      </a>
-    </button>
-    <button>
-      <a
-        href="/signup"
-        onClick={[Function]}
-      >
-        Sign Up
-      </a>
-    </button>
+    <div
+      className="button-container"
+    >
+      <button>
+        <a
+          href="/timer"
+          onClick={[Function]}
+        >
+          Timer
+        </a>
+      </button>
+      <button>
+        <a
+          href="/login"
+          onClick={[Function]}
+        >
+          Log In
+        </a>
+      </button>
+      <button>
+        <a
+          href="/signup"
+          onClick={[Function]}
+        >
+          Sign Up
+        </a>
+      </button>
+    </div>
   </nav>
   <main
     className="app-content"
@@ -52,6 +56,27 @@ exports[`renders the TimerComponent UI as expected 1`] = `
           What is the Pomodoro Technique ?
         </h3>
       </header>
+      <p>
+        <b>
+          <em>
+            To try out the app, log in with the following credentials
+          </em>
+        </b>
+        <br />
+        username:
+        <b>
+          <em>
+             test-user 
+          </em>
+        </b>
+        <br />
+        password:
+        <b>
+          <em>
+             test-password 
+          </em>
+        </b>
+      </p>
       <p>
         The Pomodoro Technique is a time-management technique that encourages productivity and focus
       </p>
