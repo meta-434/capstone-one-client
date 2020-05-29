@@ -1,5 +1,6 @@
 nav {
     display: flex;
+    flex-direction: row;
 }
 
 .nav-h1 {
@@ -16,7 +17,7 @@ nav {
     text-decoration: none;
 }
 
-nav > button > a, nav > button {
+nav > .button-container > button > a, nav > .button-container > button {
     width: 110px;
     text-decoration: none;
     background-color: #8fbcbb;
@@ -27,17 +28,22 @@ nav > button > a, nav > button {
 
 nav > p {
     max-width: 450px;
-    min-width: 250px;
+    min-width: 100px;
     color: #5e81ac;
     font-size: 25px;
     margin-right: 20px;
 }
 
-nav > button {
+nav > .button-container {
+    text-align: center;
+}
+
+nav > .button-container > button {
     border: 1px #8fbcbb solid;
     border-radius: 3px;
     background-color: #8fbcbb;
     margin-right: 10px;
+    margin-left: 10px;
     min-height: 35px;
     max-width: 150px;
 }
@@ -46,8 +52,12 @@ nav > button {
     font-size: 15px;
 }
 
-@media only screen and (max-width: 475px) {
+@media only screen and (max-width: 800px) {
 
+    nav {
+        text-align: center;
+        flex-wrap: wrap;
+    }
 
     .nav-h1 {
         width: 100%;
@@ -58,7 +68,12 @@ nav > button {
         font-size: 20px;
     }
 
-    nav > button > a {
+    .button-container {
+        text-align: center;
+        width: 100%;
+    }
+
+    nav > .button-container > button > a {
         font-size: 12px;
         text-decoration: none;
     }

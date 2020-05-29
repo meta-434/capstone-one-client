@@ -24,8 +24,8 @@ header {
     flex-direction: column;
 }
 
-.notes-display > div > h4 {
-    overflow: auto;
+.notes-display > div > h4, .notes-display > div > h3 {
+    overflow: scroll;
 }
 
 .notes-display:last-child {

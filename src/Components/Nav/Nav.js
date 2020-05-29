@@ -18,15 +18,19 @@ class Nav extends Component {
             {(!!this.context.authToken || sessionStorage[`access-token`])
                 ? <>
                     <p>Welcome, {sessionStorage[`username`] || this.context.username}</p>
-                    <button><Link to='/timer'>Timer</Link></button>
-                    <button><Link to='/sessions/'>Sessions</Link></button>
-                    <button><Link to='/notes/'>Notes</Link></button>
-                    <button className="logout" onClick={this.logOut}>Log Out</button>
+                    <div className={'button-container'}>
+                        <button><Link to='/timer'>Timer</Link></button>
+                        <button><Link to='/sessions/'>Sessions</Link></button>
+                        <button><Link to='/notes/'>Notes</Link></button>
+                        <button className="logout" onClick={this.logOut}>Log Out</button>
+                    </div>
                 </>
                 : <>
-                    <button><Link to='/timer'>Timer</Link></button>
-                    <button><Link to='/login'>Log In</Link></button>
-                    <button><Link to='/signup'>Sign Up</Link></button>
+                    <div className={'button-container'} >
+                        <button><Link to='/timer'>Timer</Link></button>
+                        <button><Link to='/login'>Log In</Link></button>
+                        <button><Link to='/signup'>Sign Up</Link></button>
+                    </div>
                 </>
             }
         </nav>
