@@ -17,6 +17,15 @@ class Main extends Component {
                     <header>
                         <h3>What is the Pomodoro Technique ?</h3>
                     </header>
+                    <p>
+                        <b><em>To try out the app, log in with the following credentials</em></b>
+                            <br />
+                            username:
+                            <b><em> test-user </em></b>
+                            <br />
+                            password:
+                            <b><em> test-password </em></b>
+                    </p>
                     <p>The Pomodoro Technique is a time-management technique that encourages productivity and focus</p>
                     <br />
                     <img src={timer} alt={'timer'} />
