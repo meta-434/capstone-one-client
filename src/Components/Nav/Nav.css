@@ -1,10 +1,14 @@
 nav {
     display: flex;
     flex-direction: row;
+
 }
 
+nav > .button-container {
+    min-width: fit-content;
+}
 .nav-h1 {
-    width: calc(100% - 250px);
+    width: 80%;
     text-align: left;
     padding: 0;
     margin: 0 0 0 0.5%;
@@ -18,7 +22,7 @@ nav {
 }
 
 nav > .button-container > button > a, nav > .button-container > button {
-    width: 110px;
+   width: 100px;
     text-decoration: none;
     background-color: #8fbcbb;
     color: #D8DEE9;
@@ -30,12 +34,13 @@ nav > p {
     max-width: 450px;
     min-width: 100px;
     color: #5e81ac;
-    font-size: 25px;
+    font-size: 18px;
     margin-right: 20px;
 }
 
 nav > .button-container {
     text-align: center;
+    width: max-content;
 }
 
 nav > .button-container > button {
@@ -46,6 +51,7 @@ nav > .button-container > button {
     margin-left: 10px;
     min-height: 35px;
     max-width: 150px;
+    min-width: fit-content;
 }
 
 .logout {
@@ -71,6 +77,8 @@ nav > .button-container > button {
     .button-container {
         text-align: center;
         width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     nav > .button-container > button > a {
@@ -107,10 +115,20 @@ nav > .button-container > button {
 @media only screen and (max-width: 400px) {
 
     nav {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
+
         min-height: 200px;
+
+    }
+
+    nav > .button-container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+    }
+
+    nav > .button-container > button {
+        width: 100%;
     }
 
     .nav-h1 {
@@ -129,9 +147,11 @@ nav > .button-container > button {
 
     nav > p {
         min-width: 100px;
-        max-width: 100px;
-        margin: auto;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: auto;
         font-size: 15px;
+        text-align: center;
     }
 
     nav > button {;
