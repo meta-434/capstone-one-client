@@ -32,6 +32,7 @@ class Notes extends Component {
         e.preventDefault();
         const {name, content} = this.state;
         this.context.handlePostNote({note_name: name, note_content: content});
+        this.props.history.push('/timer');
         // this.context.handleGetNotes();
     }
 
