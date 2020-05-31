@@ -54,7 +54,7 @@ header {
 section {
   min-height: 200px;
   padding: 30px 15px;
-  color: #5E81AC;
+  color: #8DA5C4;
 }
 
 p {
@@ -64,6 +64,11 @@ p {
 
 p + p {
   margin-top: 15px;
+}
+
+form {
+  min-width: 100%;
+  margin-left: auto;
 }
 
 button:disabled {
@@ -78,9 +83,15 @@ button {
 }
 
 input::placeholder {
-  color: #d08770;
+  color: #DCA7AD;
+  font-size: 15px;
+}
+
+textarea::placeholder {
+  color: #DCA7AD;
+  font-size: 15px;
 }
 
 .error {
-  color: #bf616a;
+  color: #DCA7AD;
 }

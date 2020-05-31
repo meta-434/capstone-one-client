@@ -19,7 +19,7 @@ header {
     width: 16.5%;
     max-height: 300px;
     min-height: 300px;
-    border: 2px #5e81ac solid;
+    border: 2px #8DA5C4 solid;
     border-radius: 3px;
     flex-direction: column;
 }
@@ -33,9 +33,9 @@ header {
 }
 
 .notes-display > button {
-    border: 2px #5e81ac solid;
+    border: 2px #8DA5C4 solid;
     margin-bottom: 10px;
-    color: #5e81ac;
+    color: #8DA5C4;
     font-size: 12px;
 }
 

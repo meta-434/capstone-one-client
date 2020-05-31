@@ -17,7 +17,7 @@ header {
 
 #timer-component > p {
     font-size: 15px;
-    border: 2px solid #bf616a;
+    border: 2px solid #DCA7AD;
     border-radius: 5px;
 }
 
@@ -29,7 +29,7 @@ header {
 }
 
 .timer-note {
-    border: 3px #5e81ac solid;
+    border: 3px #8DA5C4 solid;
     border-radius: 5px;
     max-width: 33%;
     margin-left: 33%;
@@ -51,7 +51,7 @@ header {
     text-align: center;
     margin-left: -10px;
     padding: 0;
-    color: #5e81ac;
+    color: #8DA5C4;
 }
 
 form {
@@ -87,7 +87,7 @@ form > button {
 
 .error-box {
     font-size: 18px;
-    color: #bf616a;
+    color: #DCA7AD;
     margin-top: 10px;
     height: 50px;
 }
