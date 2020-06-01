@@ -140,7 +140,7 @@ class TimerComponent extends Component {
   };
 
   render() {
-    const { reset } = this.props.timer;
+    const { reset, pause, resume } = this.props.timer;
     const { notes } = this.context;
     return (
       <>
@@ -169,8 +169,10 @@ class TimerComponent extends Component {
             formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
           />
           <br />
-          <button onClick={this.start25}>Start25</button>
-          <button onClick={this.start5}>Start5</button>
+          <button onClick={this.start25}>Start 25</button>
+          <button onClick={this.start5}>Start 5</button>
+          <button onClick={pause}>Pause</button>
+          <button onClick={resume}>Resume</button>
           <button onClick={reset}>Reset</button>
         </section>
         <section>
