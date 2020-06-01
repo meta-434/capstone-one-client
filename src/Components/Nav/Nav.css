@@ -1,180 +1,171 @@
 nav {
-    display: flex;
-    flex-direction: row;
-
+  display: flex;
+  flex-direction: row;
 }
 
 nav > .button-container {
-    min-width: fit-content;
+  min-width: fit-content;
 }
 .nav-h1 {
-    width: 80%;
-    text-align: left;
-    padding: 0;
-    margin: 0 0 0 0.5%;
+  width: 80%;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 0 0.5%;
 }
 
 .nav-h1 > a {
-    color: #DCA7AD;
-    font-size: 25px;
-    font-family: 'Inter', sans-serif;
-    text-decoration: none;
+  color: #dca7ad;
+  font-size: 25px;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
 }
 
-nav > .button-container > button > a, nav > .button-container > button {
-   width: 100px;
-    text-decoration: none;
-    background-color: #8fbcbb;
-    color: #D8DEE9;
-    font-size: 18px;
-    font-weight: bold;
+nav > .button-container > button > a,
+nav > .button-container > button {
+  width: 100px;
+  text-decoration: none;
+  background-color: #8fbcbb;
+  color: #d8dee9;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 nav > p {
-    max-width: 450px;
-    min-width: 100px;
-    color: #8DA5C4;
-    font-size: 18px;
-    margin-right: 20px;
+  max-width: 450px;
+  min-width: 100px;
+  color: #8da5c4;
+  font-size: 18px;
+  margin-right: 20px;
 }
 
 nav > .button-container {
-    text-align: center;
-    width: max-content;
+  text-align: center;
+  width: max-content;
 }
 
 nav > .button-container > button {
-    border: 1px #8fbcbb solid;
-    border-radius: 3px;
-    background-color: #8fbcbb;
-    margin-right: 10px;
-    margin-left: 10px;
-    min-height: 35px;
-    max-width: 150px;
-    min-width: fit-content;
+  border: 1px #8fbcbb solid;
+  border-radius: 3px;
+  background-color: #8fbcbb;
+  margin-right: 10px;
+  margin-left: 10px;
+  min-height: 35px;
+  max-width: 150px;
+  min-width: fit-content;
 }
 
 .logout {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 @media only screen and (max-width: 800px) {
+  nav {
+    text-align: center;
+    flex-wrap: wrap;
+  }
 
-    nav {
-        text-align: center;
-        flex-wrap: wrap;
-    }
+  .nav-h1 {
+    width: 100%;
+    text-align: center;
+  }
 
-    .nav-h1 {
-        width: 100%;
-        text-align: center;
-    }
+  .nav-h1 > a {
+    font-size: 20px;
+  }
 
-    .nav-h1 > a {
-        font-size: 20px;
-    }
+  .button-container {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .button-container {
-        text-align: center;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  nav > .button-container > button > a {
+    font-size: 12px;
+    text-decoration: none;
+  }
 
-    nav > .button-container > button > a {
-        font-size: 12px;
-        text-decoration: none;
-    }
+  nav > p {
+    width: 100%;
+    margin: auto;
+    font-size: 18px;
+  }
 
-    nav > p {
-        width: 100%;
-        margin: auto;
-        font-size: 18px;
-    }
+  nav > button {
+    border: 1px #8fbcbb solid;
+    margin-right: 5px;
+    min-height: 30px;
+    max-height: 40px;
+  }
 
-    nav > button {;
-        border: 1px #8fbcbb solid;
-        margin-right: 5px;
-        min-height: 30px;
-        max-height: 40px;
-    }
+  nav > button > a {
+    font-size: 18px;
+  }
 
-    nav > button > a {
-        font-size: 18px;
-    }
+  .timer-header {
+    margin-top: 150px;
+  }
 
-    .timer-header {
-        margin-top: 150px;
-    }
-
-    .logout {
-        font-size: 11px;
-    }
+  .logout {
+    font-size: 11px;
+  }
 }
 
 @media only screen and (max-width: 400px) {
+  nav {
+    min-height: 200px;
+  }
 
-    nav {
+  nav > .button-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+  }
 
-        min-height: 200px;
+  nav > .button-container > button {
+    width: 100%;
+  }
 
-    }
+  .nav-h1 {
+    width: 100%;
+    text-align: center;
+  }
 
-    nav > .button-container {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        flex-direction: column;
-    }
+  .nav-h1 > a {
+    font-size: 20px;
+  }
 
-    nav > .button-container > button {
-        width: 100%;
-    }
+  nav > button > a {
+    font-size: 12px;
+    text-decoration: none;
+  }
 
-    .nav-h1 {
-        width: 100%;
-        text-align: center;
-    }
+  nav > p {
+    min-width: 100px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: auto;
+    font-size: 15px;
+    text-align: center;
+  }
 
-    .nav-h1 > a {
-        font-size: 20px;
-    }
+  nav > button {
+    border: 1px #8fbcbb solid;
+    margin-right: 5px;
+    min-height: 30px;
+    max-height: 40px;
+  }
 
-    nav > button > a {
-        font-size: 12px;
-        text-decoration: none;
-    }
+  nav > button > a {
+    font-size: 18px;
+  }
 
-    nav > p {
-        min-width: 100px;
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: auto;
-        font-size: 15px;
-        text-align: center;
-    }
+  .timer-header {
+    margin-top: 150px;
+  }
 
-    nav > button {;
-        border: 1px #8fbcbb solid;
-        margin-right: 5px;
-        min-height: 30px;
-        max-height: 40px;
-    }
-
-    nav > button > a {
-        font-size: 18px;
-    }
-
-    .timer-header {
-        margin-top: 150px;
-    }
-
-    .logout {
-        font-size: 10px;
-    }
-
+  .logout {
+    font-size: 10px;
+  }
 }
-
-
-
-

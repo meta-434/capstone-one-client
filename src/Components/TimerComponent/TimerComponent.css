@@ -1,176 +1,177 @@
 header {
-    font-size: 40px;
-    min-height: 100px;
-    padding-top: 20px;
+  font-size: 40px;
+  min-height: 100px;
+  padding-top: 20px;
 }
 
 #timer-component {
-    font-family: monospace;
-    font-size: 100px;
-    border: 3px #8fbcbb solid;
-    border-radius: 5px;
-    width: 33%;
-    margin-left: 33%;
-    margin-right: 33%;
-    color: #8fbcbb;
+  font-family: monospace;
+  font-size: 100px;
+  border: 3px #8fbcbb solid;
+  border-radius: 5px;
+  width: 33%;
+  margin-left: 33%;
+  margin-right: 33%;
+  color: #8fbcbb;
 }
 
 #timer-component > p {
-    font-size: 15px;
-    border: 2px solid #DCA7AD;
-    border-radius: 5px;
+  font-size: 15px;
+  border: 2px solid #dca7ad;
+  border-radius: 5px;
 }
 
 #timer-component > button {
-    margin-right: 10px;
-    color: #8fbcbb;
-    border: 1px #8fbcbb solid;
-    font-size: 18px;
+  margin-right: 10px;
+  color: #8fbcbb;
+  border: 1px #8fbcbb solid;
+  font-size: 18px;
 }
 
 .timer-note {
-    border: 3px #8DA5C4 solid;
-    border-radius: 5px;
-    max-width: 33%;
-    margin-left: 33%;
-    margin-right:33%;
+  border: 3px #8da5c4 solid;
+  border-radius: 5px;
+  max-width: 33%;
+  margin-left: 33%;
+  margin-right: 33%;
 }
 
 .timer-note-title {
-    color: #81A1C1;
-    font-size: 25px;
-    text-decoration: underline;
+  color: #81a1c1;
+  font-size: 25px;
+  text-decoration: underline;
 }
 
 .timer-note-content {
-    font-size: 18px;
-    color: #81A1C1;
+  font-size: 18px;
+  color: #81a1c1;
 }
 
 .note-header {
-    text-align: center;
-    margin-left: -10px;
-    padding: 0;
-    color: #8DA5C4;
+  text-align: center;
+  margin-left: -10px;
+  padding: 0;
+  color: #8da5c4;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    width: 33%;
-    margin-left: 33%;
-    margin-right: 33%;
-    color: #8fbcbb;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-left: 33%;
+  margin-right: 33%;
+  color: #8fbcbb;
 }
 
 .form-header {
-    color: #8fbcbb;
+  color: #8fbcbb;
 }
 
-form > input, form > textarea {
-    border: none;
-    text-align: center;
-    font-size: 12px;
-    color: #D8DEE9;
+form > input,
+form > textarea {
+  border: none;
+  text-align: center;
+  font-size: 12px;
+  color: #d8dee9;
 }
 
 form > button {
-    border: 1px solid #8fbcbb;
-    width: 200px;
-    background-color: #8fbcbb;
-    color: #4C566A;
-    font-size: 25px;
-    font-weight: bold;
-    border-radius: 3px;
-    margin: 10px auto 0;
+  border: 1px solid #8fbcbb;
+  width: 200px;
+  background-color: #8fbcbb;
+  color: #4c566a;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 3px;
+  margin: 10px auto 0;
 }
 
 .error-box {
-    font-size: 18px;
-    color: #DCA7AD;
-    margin-top: 10px;
-    height: 50px;
+  font-size: 18px;
+  color: #dca7ad;
+  margin-top: 10px;
+  height: 50px;
 }
 
 .form-and-error {
-    border: 3px solid #8fbcbb;
-    border-radius: 5px;
-    width: 33%;
-    margin-left: 33%;
-    margin-right: 33%;
-    padding-bottom: 0px;
-    margin-bottom: 100px;
+  border: 3px solid #8fbcbb;
+  border-radius: 5px;
+  width: 33%;
+  margin-left: 33%;
+  margin-right: 33%;
+  padding-bottom: 0px;
+  margin-bottom: 100px;
 }
 
 .timer-header {
-    color: #8fbcbb;
+  color: #8fbcbb;
 }
 
 form > label {
-    font-size: 25px;
-    width: 300px;
-    margin-left: calc(50% - 150px);
-    margin-right: auto;
+  font-size: 25px;
+  width: 300px;
+  margin-left: calc(50% - 150px);
+  margin-right: auto;
 }
 
 @media only screen and (max-width: 975px) {
-    #timer-component {
-        font-size: 50px;
-    }
+  #timer-component {
+    font-size: 50px;
+  }
 
-    .form-and-error {
-        margin-left: 20px;
-        margin-right: 20px;
-        width: calc(100% - 40px);
-    }
+  .form-and-error {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+  }
 
-    form {
-        margin-left: 10px;
-        margin-right: 10px;
-        width: calc(100% - 20px);
-    }
+  form {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+  }
 
-    form > button {
-        text-align: center;
-    }
+  form > button {
+    text-align: center;
+  }
 
-    .timer-note {
-        margin-left: 10px;
-        margin-right: 10px;
-        min-width: calc(100% - 20px);
-    }
+  .timer-note {
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: calc(100% - 20px);
+  }
 }
 @media only screen and (max-width: 575px) {
-    #timer-component {
-        font-size: 20px;
-    }
+  #timer-component {
+    font-size: 20px;
+  }
 
-    .form-and-error {
-        margin-left: 20px;
-        margin-right: 20px;
-        width: calc(100% - 40px);
-    }
+  .form-and-error {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+  }
 
-    form {
-        margin-left: 10px;
-        margin-right: 10px;
-        width: calc(100% - 20px);
-    }
+  form {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+  }
 
-    form > button {
-        text-align: center;
-    }
+  form > button {
+    text-align: center;
+  }
 
-    .timer-note {
-        margin-left: 10px;
-        margin-right: 10px;
-        min-width: calc(100% - 20px);
-    }
+  .timer-note {
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: calc(100% - 20px);
+  }
 
-    .react-form > label {
-        max-width: calc(100% - 20px);
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 18px;
-    }
+  .react-form > label {
+    max-width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 18px;
+  }
 }

@@ -1,16 +1,22 @@
-@import url('https://rsms.me/inter/inter.css');
-  html { font-family: 'Inter', sans-serif; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
 }
 @supports (font-variation-settings: normal) {
-  html { font-family: 'Inter Bold', sans-serif; }
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter Bold", sans-serif;
+  }
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Inter';
-  background: url('images/background.png') no-repeat center center fixed;
+  font-family: "Inter";
+  background: url("images/background.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -54,7 +60,7 @@ header {
 section {
   min-height: 200px;
   padding: 30px 15px;
-  color: #8DA5C4;
+  color: #8da5c4;
 }
 
 p {
@@ -72,9 +78,9 @@ form {
 }
 
 button:disabled {
-  border: 2px #4C566A solid;
+  border: 2px #4c566a solid;
   border-radius: 3px;
-  color: #4C566A;
+  color: #4c566a;
 }
 
 button {
@@ -83,15 +89,15 @@ button {
 }
 
 input::placeholder {
-  color: #DCA7AD;
+  color: #dca7ad;
   font-size: 15px;
 }
 
 textarea::placeholder {
-  color: #DCA7AD;
+  color: #dca7ad;
   font-size: 15px;
 }
 
 .error {
-  color: #DCA7AD;
+  color: #dca7ad;
 }

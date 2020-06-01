@@ -1,51 +1,52 @@
 header {
-    font-size: 40px;
-    min-height: 100px;
-    padding-top: 20px;
+  font-size: 40px;
+  min-height: 100px;
+  padding-top: 20px;
 }
 
 .notes-display {
-    margin-top: 0;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: center;
+  margin-top: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
 }
 
 .notes-display > div {
-    margin: 0.5%;
-    text-align: center;
-    min-width: 200px;
-    width: 16.5%;
-    max-height: 300px;
-    min-height: 300px;
-    border: 2px #8DA5C4 solid;
-    border-radius: 3px;
-    flex-direction: column;
+  margin: 0.5%;
+  text-align: center;
+  min-width: 200px;
+  width: 16.5%;
+  max-height: 300px;
+  min-height: 300px;
+  border: 2px #8da5c4 solid;
+  border-radius: 3px;
+  flex-direction: column;
 }
 
-.notes-display > div > h4, .notes-display > div > h3 {
-    overflow: scroll;
+.notes-display > div > h4,
+.notes-display > div > h3 {
+  overflow: scroll;
 }
 
 .notes-display:last-child {
-    border-color: #A3BE8C;
+  border-color: #a3be8c;
 }
 
 .notes-display > button {
-    border: 2px #8DA5C4 solid;
-    margin-bottom: 10px;
-    color: #8DA5C4;
-    font-size: 12px;
+  border: 2px #8da5c4 solid;
+  margin-bottom: 10px;
+  color: #8da5c4;
+  font-size: 12px;
 }
 
 .react-form-section {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 @media only screen and (max-width: 575px) {
- .notes-display {
-     flex-direction: column-reverse;
- }
+  .notes-display {
+    flex-direction: column-reverse;
+  }
 }
