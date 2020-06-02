@@ -149,9 +149,11 @@ class Login extends Component {
                 id="error-box"
                 aria-live="assertive"
               >
-                {this.state.usernameValidation}
+                {this.state.username !== undefined &&
+                  this.state.usernameValidation}
                 <br />
-                {this.state.passwordValidation}
+                {this.state.password !== undefined &&
+                  this.state.passwordValidation}
               </section>
             </form>
           </section>
