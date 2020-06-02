@@ -67,7 +67,9 @@ class Main extends Component {
           <p>
             Keep formulae, phone numbers, or just encouraging thoughts - your
             most recent note will be displayed on the timer page for reference
-            during work sessions.
+            during work sessions. Notes can only be modified from the notes tab
+            as to not distract the user during work sessions. Remember to set
+            your notes before you start the timer!
           </p>
         </section>
       </>
