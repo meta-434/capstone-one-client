@@ -58,9 +58,9 @@ header {
 form {
   display: flex;
   flex-direction: column;
-  width: 33%;
-  margin-left: 33%;
-  margin-right: 33%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   color: #8fbcbb;
 }
 
@@ -111,9 +111,6 @@ form > button {
 
 form > label {
   font-size: 25px;
-  width: 300px;
-  margin-left: calc(50% - 150px);
-  margin-right: auto;
 }
 
 @media only screen and (min-width: 575px) {
@@ -135,9 +132,9 @@ form > label {
   }
 
   form {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+    width: 33%;
   }
 
   form > button {
@@ -151,7 +148,7 @@ form > label {
   }
 
   .react-form > label {
-    max-width: calc(100% - 20px);
+    width: 100%;
     margin-left: 10px;
     margin-right: 10px;
     font-size: 18px;

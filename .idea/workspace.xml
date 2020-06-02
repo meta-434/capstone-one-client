@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1940b3b-497d-49fe-b057-f712bf2c26a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Main/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main/Main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Notes/Notes.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Notes/Notes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/TimerComponent/TimerComponent.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TimerComponent/TimerComponent.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +75,7 @@
       <workItem from="1589468446204" duration="3655000" />
       <workItem from="1590476722348" duration="7211000" />
       <workItem from="1590724585580" duration="4023000" />
+      <workItem from="1591112760189" duration="18000" />
     </task>
     <servers />
   </component>

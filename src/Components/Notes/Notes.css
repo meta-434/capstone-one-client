@@ -7,7 +7,7 @@ header {
 .notes-display {
   margin-top: 0;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
 }
@@ -38,6 +38,7 @@ header {
   margin-bottom: 10px;
   color: #8da5c4;
   font-size: 12px;
+  text-align: center;
 }
 
 .react-form-section {
@@ -45,8 +46,14 @@ header {
   margin: 0;
 }
 
-@media only screen and (max-width: 575px) {
+#submit-button {
+  text-align: center;
+  color: red;
+  margin-right: 50%;
+}
+
+@media only screen and (min-width: 575px) {
   .notes-display {
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
   }
 }

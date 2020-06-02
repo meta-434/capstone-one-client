@@ -9,11 +9,17 @@ section > p {
 }
 
 img {
-  max-width: 33%;
+  max-width: 70%;
   border: 2px #ebcb8b solid;
   border-radius: 3px;
 }
 
 .app-content {
   margin-top: 150px;
+}
+
+@media only screen and (min-width: 1000px) {
+  img {
+    max-width: 50%;
+  }
 }

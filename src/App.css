@@ -72,11 +72,6 @@ p + p {
   margin-top: 15px;
 }
 
-form {
-  min-width: 100%;
-  margin-left: auto;
-}
-
 button:disabled {
   border: 2px #4c566a solid;
   border-radius: 3px;
