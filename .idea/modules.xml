@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/capstone-one-client.iml" filepath="$PROJECT_DIR$/.idea/capstone-one-client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../noteful-client/.idea/noteful-client.iml" filepath="$PROJECT_DIR$/../noteful-client/.idea/noteful-client.iml" />
     </modules>
   </component>
 </project>
