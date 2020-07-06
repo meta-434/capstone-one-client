@@ -46,7 +46,7 @@ it("renders the Sessions UI as expected", () => {
               session_id: 1,
               session_name: "jest session",
               session_description: "jest test session",
-              session_end: new Date().getMonth(),
+              session_end: new Date(2020, 0, 1).toUTCString(),
               session_owner: 30,
             },
           ],
@@ -54,7 +54,7 @@ it("renders the Sessions UI as expected", () => {
             return {
               session_name: "jest session",
               session_description: "jest session description",
-              session_end: new Date().getMonth(),
+              session_end: new Date(2020, 0, 1).toUTCString(),
               session_owner: 1,
             };
           },

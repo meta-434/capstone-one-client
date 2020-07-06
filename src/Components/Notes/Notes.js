@@ -140,9 +140,9 @@ class Notes extends Component {
             </button>
           </form>
           <section className="error-box" id="error-box" aria-live="assertive">
-            {this.state.nameValidation}
+            {this.state.name !== undefined && this.state.nameValidation}
             <br />
-            {this.state.contentValidation}
+            {this.state.content !== undefined && this.state.contentValidation}
           </section>
         </section>
         <section className="notes-display">

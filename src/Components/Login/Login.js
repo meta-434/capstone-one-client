@@ -32,6 +32,7 @@ class Login extends Component {
 
   handlePostSubmit = (e) => {
     e.preventDefault();
+    console.log("firing...");
     this.context.handlePostAuthenticate(this.state);
   };
 
