@@ -40,7 +40,13 @@ footer {
 }
 
 .error {
-  margin-top: 140px;
+  margin-top:300px;
+}
+
+.error-box {
+  min-height: 0px;
+  max-height: 30px;
+  margin-bottom: 10px;
 }
 
 nav {

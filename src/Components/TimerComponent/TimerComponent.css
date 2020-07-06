@@ -9,14 +9,14 @@ header {
   font-size: 40px;
   border: 3px #8fbcbb solid;
   border-radius: 5px;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
   color: #8fbcbb;
 }
 
 #timer-component > p {
-  font-size: 15px;
+  font-size: 25px;
   border: 2px solid #dca7ad;
   border-radius: 5px;
 
@@ -91,8 +91,7 @@ form > button {
 .error-box {
   font-size: 18px;
   color: #dca7ad;
-  margin-top: 10px;
-  height: 50px;
+  margin: 5px 0 0 0;
 }
 
 .form-and-error {
@@ -118,7 +117,7 @@ form > label {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 20px;
+    font-size: 25px;
   }
 
   #timer-component > * {
