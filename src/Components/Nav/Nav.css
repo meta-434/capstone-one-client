@@ -3,169 +3,117 @@ nav {
   flex-direction: row;
 }
 
-nav > .button-container {
-  min-width: fit-content;
-}
-.nav-h1 {
-  width: 80%;
-  text-align: left;
-  padding: 0;
-  margin: 0 0 0 0.5%;
-}
-
-.nav-h1 > a {
-  color: #dca7ad;
-  font-size: 25px;
-  font-family: "Inter", sans-serif;
-  text-decoration: none;
-}
-
-nav > .button-container > button > a,
-nav > .button-container > button {
-  width: 100px;
-  text-decoration: none;
-  background-color: #8fbcbb;
-  color: #d8dee9;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-nav > p {
-  max-width: 450px;
-  min-width: 100px;
-  color: #8da5c4;
-  font-size: 18px;
-  margin-right: 20px;
-}
-
-nav > .button-container {
-  text-align: center;
-  width: max-content;
-}
-
-nav > .button-container > button {
-  border: 1px #8fbcbb solid;
-  border-radius: 3px;
-  background-color: #8fbcbb;
-  margin-right: 10px;
-  margin-left: 10px;
-  min-height: 35px;
-  max-width: 150px;
-  min-width: fit-content;
-}
-
-.logout {
-  font-size: 15px;
-}
-
-@media only screen and (max-width: 800px) {
+/* portrait phones */
+@media only screen and (min-width:0px) {
   nav {
-    text-align: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    border-bottom: 4px solid red;
+    min-height: 230px;
   }
 
-  .nav-h1 {
-    width: 100%;
-    text-align: center;
+  nav > * {
+    margin: 0;
   }
 
-  .nav-h1 > a {
-    font-size: 20px;
+  nav > h1 > a {
+    text-decoration: none;
+    color: #8da5c4;
+    font-size: 25px;
+    margin: 0;
+  }
+
+  nav > p {
+    color: #dca7ad;
   }
 
   .button-container {
-    text-align: center;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
-  nav > .button-container > button > a {
-    font-size: 12px;
+  .button-container > * {
+    min-width: calc(100% - 10px);
+    height: 25px;
+    margin: 5px 5px 5px 5px;
+    border: 2px solid #8fbcbb;
+
+  }
+  nav > .button-container > button > a, nav > .button-container > button {
+    color: #8fbcbb;
+    font-size: 16px;
+    width: 25%;
     text-decoration: none;
-  }
-
-  nav > p {
-    width: 100%;
-    margin: auto;
-    font-size: 18px;
-  }
-
-  nav > button {
-    border: 1px #8fbcbb solid;
-    margin-right: 5px;
-    min-height: 30px;
-    max-height: 40px;
-  }
-
-  nav > button > a {
-    font-size: 18px;
-  }
-
-  .timer-header {
-    margin-top: 150px;
-  }
-
-  .logout {
-    font-size: 11px;
   }
 }
 
-@media only screen and (max-width: 400px) {
-  nav {
-    min-height: 200px;
-  }
-
-  nav > .button-container {
-    width: 100%;
+/* landscape phones */
+@media only screen and (min-width:480px) {
+  nav > p {
+    color: #dca7ad;
+    max-height: 50px;
+    align-self: center;
     margin-left: auto;
-    margin-right: auto;
-    flex-direction: column;
+    margin-right: 10px;
   }
 
-  nav > .button-container > button {
+  nav > h1 {
+    max-height: 50px;
+    align-self: center;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 100px;
+    border-bottom-color: yellow;
+  }
+
+  .button-container {
     width: 100%;
+    height: 50%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
   }
 
-  .nav-h1 {
-    width: 100%;
-    text-align: center;
+  .button-container > * {
+    min-width: 20%;
+    max-width: calc(25% - 10px);
+    height: 100%;
+    margin: 0 5px 0 5px;
+  }
+  nav > .button-container > button > a, nav > .button-container > button {
+    font-size: 18px;
+  }
+}
+/* ipads and up */
+@media only screen and (min-width:801px) {
+  nav > p {
+    color: green;
   }
 
-  .nav-h1 > a {
+  nav {
+    justify-content: center;
+    align-content: center;
+  }
+
+  .button-container {
+    width: 45%;
+    height: 100%;
+  }
+
+  .button-container > * {
+    height: 100%;
+  }
+
+  nav > .button-container > button > a, nav > .button-container > button {
     font-size: 20px;
   }
 
-  nav > button > a {
-    font-size: 12px;
-    text-decoration: none;
-  }
-
-  nav > p {
-    min-width: 100px;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: auto;
-    font-size: 15px;
-    text-align: center;
-  }
-
-  nav > button {
-    border: 1px #8fbcbb solid;
-    margin-right: 5px;
-    min-height: 30px;
-    max-height: 40px;
-  }
-
-  nav > button > a {
-    font-size: 18px;
-  }
-
-  .timer-header {
-    margin-top: 150px;
-  }
-
-  .logout {
-    font-size: 10px;
-  }
 }
