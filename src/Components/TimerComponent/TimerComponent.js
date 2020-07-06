@@ -233,9 +233,10 @@ class TimerComponent extends Component {
                 id="error-box"
                 aria-live="assertive"
               >
-                {this.state.nameValidation}
+                {this.state.name !== undefined && this.state.nameValidation}
                 <br />
-                {this.state.descriptionValidation}
+                {this.state.description !== undefined &&
+                  this.state.descriptionValidation}
               </section>
             </section>
           </>
