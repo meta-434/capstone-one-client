@@ -183,8 +183,12 @@ class TimerComponent extends Component {
           )}
           {!!notes && notes.length > 0 ? (
             <div className="timer-note">
-              <p className="timer-note-title">{notes[0].note_name}</p>
-              <p className="timer-note-content">{notes[0].note_content}</p>
+              <p className="timer-note-title">
+                {notes[notes.length - 1].note_name}
+              </p>
+              <p className="timer-note-content">
+                {notes[notes.length - 1].note_content}
+              </p>
             </div>
           ) : (
             ``
