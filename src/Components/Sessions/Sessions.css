@@ -13,17 +13,16 @@ section > p {
 }
 
 .sessions-display {
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
 }
 
 .sessions-display > div {
-  margin: 0.5%;
-  text-align: center;
+  margin: 10px;
   min-width: 200px;
   width: 16.5%;
   max-height: 400px;
@@ -31,17 +30,36 @@ section > p {
   border: 2px #8da5c4 solid;
   border-radius: 3px;
   flex-direction: column;
-  flex-wrap: nowrap;
 }
 
 .sessions-display > div > h4,
 .sessions-display > div > h3 {
   overflow: scroll;
-  word-break: break-all;
+  word-break: break-word;
+  margin: 0;
 }
 
 .sessions-display > div > h3 {
   min-height: 40px;
+}
+
+.sessions-display > div > h4 {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: normal;
+  overflow: auto;
+  max-height: 220px;
+}
+
+.sessions-display > div > p {
+  margin-top: auto;
+  font-size: 18px;
+}
+
+.sessions-display > div > p, .sessions-display > div > button {
+  margin-bottom: 10px;
+  width: 90%;
+  align-self: center;
 }
 
 .sessions-display > button {
@@ -53,7 +71,7 @@ section > p {
 
 @media only screen and (min-width: 600px) {
   .sessions-display {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .sessions-display > div {
