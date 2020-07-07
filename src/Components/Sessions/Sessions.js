@@ -36,7 +36,13 @@ class Sessions extends Component {
                       >
                         <h3>{session.session_name}</h3>
                         <h4>↳ {session.session_description}</h4>
-                        <p>session completed: {session.session_end}</p>
+                        <p>
+                          session completed:{" "}
+                          {new Date(session.session_end).toDateString()}
+                          @
+                          <br />
+                          {new Date(session.session_end).toLocaleTimeString()}
+                        </p>
                         <button onClick={() => this.handleDelete(session.id)}>
                           Delete
                         </button>
