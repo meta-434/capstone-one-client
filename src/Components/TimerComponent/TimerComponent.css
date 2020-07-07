@@ -16,7 +16,7 @@ header {
 }
 
 #timer-component > p {
-  font-size: 25px;
+  font-size: 40px;
   border: 2px solid #dca7ad;
   border-radius: 5px;
 
@@ -26,15 +26,14 @@ header {
   margin-right: 10px;
   color: #8fbcbb;
   border: 1px #8fbcbb solid;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .timer-note {
   border: 3px #8da5c4 solid;
   border-radius: 5px;
-  max-width: 33%;
-  margin-left: 33%;
-  margin-right: 33%;
+  max-width: calc(100% - 20px);
+  margin: auto;
 }
 
 .timer-note-title {
@@ -62,6 +61,8 @@ form {
   margin-left: auto;
   margin-right: auto;
   color: #8fbcbb;
+  text-align: center;
+  align-items: center;
 }
 
 .form-header {
@@ -73,8 +74,10 @@ form > textarea {
   border: 2px #8DA5C4 solid;
   border-radius: 3px;
   text-align: center;
-  font-size: 12px;
+  font-size: 18px;
   color: #d8dee9;
+  width: 100%;
+
 }
 
 form > button {
@@ -85,7 +88,7 @@ form > button {
   font-size: 25px;
   font-weight: bold;
   border-radius: 3px;
-  margin: 10px auto 0;
+  margin-top: 10px
 }
 
 .error-box {
@@ -117,23 +120,17 @@ form > label {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 25px;
+    font-size: 40px;
   }
 
   #timer-component > * {
-    font-size: 22px;
+    font-size: 40px;
   }
 
   .form-and-error {
     margin-left: 20px;
     margin-right: 20px;
     width: calc(100% - 40px);
-  }
-
-  form {
-    margin-left: auto;
-    margin-right: auto;
-    width: 33%;
   }
 
   form > button {
