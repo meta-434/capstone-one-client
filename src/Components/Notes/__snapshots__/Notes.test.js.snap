@@ -59,9 +59,7 @@ Array [
       className="error-box"
       id="error-box"
     >
-       name cannot be blank. 
       <br />
-       content cannot be blank. 
     </section>
   </section>,
   <section
@@ -151,9 +149,7 @@ Array [
       className="error-box"
       id="error-box"
     >
-       name cannot be blank. 
       <br />
-       content cannot be blank. 
     </section>
   </section>,
   <section
