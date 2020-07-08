@@ -5,27 +5,31 @@ header {
 }
 
 .notes-display {
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
   flex-wrap: wrap;
-  overflow-y: auto;
-  overflow-x: hidden;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .notes-display > div {
-  margin: 0.5%;
-  text-align: center;
+  margin: 10px;
   min-width: 200px;
   width: 20%;
   max-height: 400px;
   min-height: 400px;
   border: 2px #8da5c4 solid;
   border-radius: 3px;
-  flex-direction: row;
-  padding: 10px;
+  flex-direction: column;
+}
+
+.notes-display > div > h4,
+.notes-display > div > h3 {
+  word-break: break-word;
+  margin: 0;
+  overflow: auto;
 }
 
 .notes-display > * {
@@ -36,12 +40,18 @@ header {
   border-color: #a3be8c;
 }
 
-.notes-display > button {
+.notes-display > div > p, .notes-display > div > button {
+  margin-bottom: 10px;
+  width: 90%;
+  align-self: center;
+}
+
+.notes-display > div > button {
   border: 2px #8da5c4 solid;
   margin-bottom: 10px;
   color: #8da5c4;
   font-size: 12px;
-  text-align: center;
+  padding-bottom: 0;
 }
 
 .react-form-section {
