@@ -177,7 +177,15 @@ class TimerComponent extends Component {
         </section>
         <section>
           {!!notes && notes.length > 0 ? (
-            <header className="note-header">Note</header>
+            <>
+              <header className="note-header">Note</header>
+              <p>
+                Notes are modified on their own tab to mimize distractions. this
+                isn't meant to be a note taking app 😁
+                <br /> <br />
+                <em>remember, only your most recent note is displayed here!</em>
+              </p>
+            </>
           ) : (
             ``
           )}
