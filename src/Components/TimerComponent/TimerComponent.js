@@ -181,7 +181,10 @@ class TimerComponent extends Component {
               <header className="note-header">Note</header>
               <p>
                 Notes are modified on their own tab to mimize distractions. this
-                isn't meant to be a note taking app 😁
+                isn't meant to be a note taking app{" "}
+                <span role="img" aria-label="smiling face emoji">
+                  😁
+                </span>
                 <br /> <br />
                 <em>remember, only your most recent note is displayed here!</em>
               </p>

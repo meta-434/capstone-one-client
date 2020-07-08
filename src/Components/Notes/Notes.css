@@ -11,23 +11,25 @@ header {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .notes-display > div {
   margin: 0.5%;
   text-align: center;
   min-width: 200px;
-  width: 16.5%;
-  max-height: 300px;
-  min-height: 300px;
+  width: 20%;
+  max-height: 400px;
+  min-height: 400px;
   border: 2px #8da5c4 solid;
   border-radius: 3px;
-  flex-direction: column;
+  flex-direction: row;
+  padding: 10px;
 }
 
-.notes-display > div > h4,
-.notes-display > div > h3 {
-  overflow: scroll;
+.notes-display > * {
+  background: black;
 }
 
 .notes-display:first-child {
@@ -49,7 +51,6 @@ header {
 
 #submit-button {
   text-align: center;
-  color: red;
   margin-right: 50%;
 }
 
@@ -61,7 +62,6 @@ header {
   .notes-display > div {
     flex-direction: row;
     flex-wrap: wrap;
-    overflow-y: scroll;
   }
 
   .notes-display > div > h3 {
