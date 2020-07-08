@@ -57,4 +57,19 @@ header {
   .notes-display {
     flex-direction: row;
   }
+
+  .notes-display > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+
+  .notes-display > div > h3 {
+    width: 100%;
+  }
+
+  .notes-display > div > h4 {
+    font-weight: normal;
+    font-size: 18px;
+  }
 }
