@@ -92,9 +92,14 @@ form > button {
 }
 
 .error-box {
+  padding: 0;
+  margin: 0;
   font-size: 18px;
   color: #dca7ad;
-  margin: 5px 0 0 0;
+}
+
+.error-box > * {
+  margin-top: 0;
 }
 
 .form-and-error {

@@ -79,7 +79,7 @@ class TimerComponent extends Component {
 
     if (!name) {
       hasError = true;
-      validationMessages = " session name can't be blank ";
+      validationMessages = " session name can't be blank";
     } else {
       validationMessages = "";
     }
@@ -99,7 +99,7 @@ class TimerComponent extends Component {
 
     if (!description) {
       hasError = true;
-      validationMessages = " session description can't be blank ";
+      validationMessages = " session description can't be blank";
     } else {
       validationMessages = "";
     }
@@ -249,7 +249,12 @@ class TimerComponent extends Component {
                 aria-live="assertive"
               >
                 {this.state.name !== undefined && this.state.nameValidation}
-                <br />
+                {this.state.nameValidation &&
+                this.state.descriptionValidation &&
+                this.state.name !== undefined &&
+                this.state.description !== undefined
+                  ? ", and "
+                  : ""}
                 {this.state.description !== undefined &&
                   this.state.descriptionValidation}
               </section>

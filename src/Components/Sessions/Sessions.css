@@ -22,6 +22,10 @@ section > p {
   overflow: hidden;
 }
 
+.sessions-display > * {
+  background: black;
+}
+
 .sessions-display > div {
   margin: 10px;
   min-width: 200px;
@@ -30,7 +34,7 @@ section > p {
   min-height: 400px;
   border: 2px #8da5c4 solid;
   border-radius: 3px;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .sessions-display > div > h4,

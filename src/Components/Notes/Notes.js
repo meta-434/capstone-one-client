@@ -53,7 +53,7 @@ class Notes extends Component {
 
     if (!name) {
       hasError = true;
-      validationMessages = " name cannot be blank. ";
+      validationMessages = " name cannot be blank";
     } else {
       validationMessages = "";
     }
@@ -73,7 +73,7 @@ class Notes extends Component {
 
     if (!content) {
       hasError = true;
-      validationMessages = " content cannot be blank. ";
+      validationMessages = " content cannot be blank";
     } else {
       validationMessages = "";
     }
@@ -141,7 +141,12 @@ class Notes extends Component {
           </form>
           <section className="error-box" id="error-box" aria-live="assertive">
             {this.state.name !== undefined && this.state.nameValidation}
-            <br />
+            {this.state.nameValidation &&
+            this.state.contentValidation &&
+            this.state.name !== undefined &&
+            this.state.content !== undefined
+              ? ", and "
+              : ""}
             {this.state.content !== undefined && this.state.contentValidation}
           </section>
         </section>
