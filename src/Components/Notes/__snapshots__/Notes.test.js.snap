@@ -59,7 +59,7 @@ Array [
       className="error-box"
       id="error-box"
     >
-      <br />
+      
     </section>
   </section>,
   <section
@@ -149,7 +149,7 @@ Array [
       className="error-box"
       id="error-box"
     >
-      <br />
+      
     </section>
   </section>,
   <section
