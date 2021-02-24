@@ -4,7 +4,7 @@ This is a pomodoro timer app that optionally allows users to save unique pomodor
 for reference during work.
 
 + Server repo found [here](https://github.com/meta-434/capstone-one-server)
-+ Live site found [here](pomodoro.alex-hapgood.info)
++ Live site found [here](https://pomodoro.alex-hapgood.info)
 
 ## Concept
 The design of the Pomodoro App intends to provide the user with a fully-featured digital pomodoro timer, complete 
